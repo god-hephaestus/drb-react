@@ -4,7 +4,7 @@ import VideoSwiper from "../components/VideoSwiper";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ backgroundImage: 'url("/bodyBg.webp")' }}>
       <Hero></Hero>
       <Bout></Bout>
       <VideoSwiper></VideoSwiper>

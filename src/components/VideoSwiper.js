@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
 export default function VideoSwiper() {
-  const [swiperInstance, setSwiperInstance] = useState(null); // State to hold Swiper instance.
-
   const imagePaths = [
     "/cover/videoCoverB.webp",
     "/cover/videoCoverB2.webp",
@@ -30,66 +28,54 @@ export default function VideoSwiper() {
   ];
 
   return (
-    <section className="videoArea steps-area">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 text-area">
-            <h3>Testimonials</h3>
-          </div>
-        </div>
-        <div className="row">
+    <section className="py-12">
+      <div className="container mx-auto px-10">
+        <h3 className="text-center text-3xl font-semibold mb-8 text-[#c0a062]">
+          Testimonials
+        </h3>
+        <div className="relative">
           <Swiper
-            className="videoSwiper"
+            className="w-full"
+            touchReleaseOnEdges
             modules={[Navigation]}
-            slidesPerView={3}
-            spaceBetween={20}
             navigation={{
               nextEl: ".videoNext",
               prevEl: ".videoPrev",
             }}
-            onSwiper={(swiper) => setSwiperInstance(swiper)}
             breakpoints={{
               480: {
                 slidesPerView: 1,
                 spaceBetween: 10,
               },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-              },
               1024: {
                 slidesPerView: 3,
-                spaceBetween: 20,
+                spaceBetween: 10,
               },
             }}
           >
             {imagePaths.map((path, index) => (
-              <SwiperSlide key={index} className="videoSwiperSlide">
+              <SwiperSlide
+                key={index}
+                className="relative flex items-center justify-center"
+              >
                 <a
                   href={videoLinks[index]}
-                  data-lity
-                  title={`Video ${index + 1}`}
+                  className="w-full h-full rounded-lg overflow-hidden"
                 >
-                  <div
-                    className="play-image"
-                    style={{
-                      backgroundImage: `url(${path})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      height: "600px",
-                    }}
-                  ></div>
+                  <img
+                    src={path}
+                    alt={`Video thumbnail ${index + 1}`}
+                    className="w-full h-full object-contain"
+                  />
                 </a>
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* Ensure navigation buttons are styled properly */}
-          <div className="videoNext" style={{ cursor: "pointer" }}>
-            Next
+          <div className="videoNext absolute top-1/2 right-0 transform -translate-y-1/2 w-10 h-10 bg-[#c0a06280] text-white rounded-full flex items-center justify-center z-10 cursor-pointer text-lg">
+            <span className="inline-block p-1 transform -rotate-90">▼</span>
           </div>
-          <div className="videoPrev" style={{ cursor: "pointer" }}>
-            Prev
+          <div className="videoPrev absolute top-1/2 left-0 transform -translate-y-1/2 w-10 h-10 bg-[#c0a06280] text-white rounded-full flex items-center justify-center z-10 cursor-pointer text-lg">
+            <span className="inline-block p-1 transform rotate-90">▼</span>
           </div>
         </div>
       </div>

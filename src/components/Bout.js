@@ -2,7 +2,7 @@ export default function Bout() {
   return (
     <section className="w-full bg-[#111111] text-white px-[10%]">
       <div
-        className="bg-no-repeat bg-center mx-auto h-[300px] lg:h-[400px]"
+        className="bg-no-repeat bg-center mx-auto about pb-10 lg:h-[400px]"
         style={{
           backgroundImage: 'url("/aboutBgMobile.webp")',
           backgroundSize: "contain",
@@ -12,7 +12,7 @@ export default function Bout() {
         <style>
           {`
                 @media (min-width: 1024px) {
-                  .bg-center {
+                  .about {
                     background-image: url("/aboutBg.webp") !important;
                     background-size: cover;
                   }
