@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import Bout from "../components/Bout";
+import Steps from "../components/Steps";
 import VideoSwiper from "../components/VideoSwiper";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero></Hero>
       <Bout></Bout>
       <VideoSwiper></VideoSwiper>
+      <Steps></Steps>
     </main>
   );
 }
