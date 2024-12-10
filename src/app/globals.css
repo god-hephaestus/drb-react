@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +18,21 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  src: url("/fonts/MonumentExtended-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  src: url("/fonts/MonumentExtended-Ultrabold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+.monument-heading {
+  font-family: "Monument Extended", sans-serif;
 }
