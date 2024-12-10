@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import Bout from "../components/Bout";
 import Steps from "../components/Steps";
 import VideoSwiper from "../components/VideoSwiper";
+import ProcedureSwiper from "../components/ProcedureSwiper";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Bout></Bout>
       <VideoSwiper></VideoSwiper>
       <Steps></Steps>
+      <ProcedureSwiper></ProcedureSwiper>
     </main>
   );
 }
