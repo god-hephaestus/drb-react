@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 export default function VideoSwiper() {
   const imagePaths = [
@@ -60,12 +61,13 @@ export default function VideoSwiper() {
               >
                 <a
                   href={videoLinks[index]}
-                  className="w-full h-full rounded-lg overflow-hidden"
+                  className="w-full h-full rounded-lg flex justify-center overflow-hidden"
                 >
-                  <img
+                  <Image
                     src={path}
                     alt={`Video thumbnail ${index + 1}`}
-                    className="w-full h-full object-contain"
+                    width={400}
+                    height={400}
                   />
                 </a>
               </SwiperSlide>

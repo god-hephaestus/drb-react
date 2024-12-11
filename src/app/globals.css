@@ -35,3 +35,10 @@ body {
 .monument-heading {
   font-family: "Monument Extended", sans-serif;
 }
+
+.custom-bullet-active {
+  width: 30px !important;
+  background-color: #c0a062 !important;
+  opacity: 1 !important;
+  border-radius: 15px !important;
+}
