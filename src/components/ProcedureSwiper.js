@@ -59,9 +59,8 @@ export default function ProcedureSwiper() {
                   <Image
                     src={slide.image}
                     alt={slide.title}
-                    layout="fill"
-                    objectFit="contain"
-                    className="rounded-2xl"
+                    fill
+                    className="rounded-2xl object-contain"
                   />
                 </div>
               </div>
