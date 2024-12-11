@@ -6,7 +6,14 @@ import ProcedureSwiper from "../components/ProcedureSwiper";
 
 export default function Home() {
   return (
-    <main style={{ backgroundImage: 'url("/bodyBg.webp")' }}>
+    <main
+      style={{
+        backgroundImage: 'url("/bodyBg.webp")',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
       <Hero></Hero>
       <Bout></Bout>
       <VideoSwiper></VideoSwiper>

@@ -35,7 +35,10 @@ body {
 .monument-heading {
   font-family: "Monument Extended", sans-serif;
 }
-
+.swiper-pagination-bullet {
+  transition: width 0.3s ease, background-color 0.3s ease, transform 0.3s ease !important;
+  background-color: #ffffff !important;
+}
 .custom-bullet-active {
   width: 30px !important;
   background-color: #c0a062 !important;
