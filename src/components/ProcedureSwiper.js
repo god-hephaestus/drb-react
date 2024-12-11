@@ -36,7 +36,7 @@ export default function ProcedureSwiper() {
   ];
 
   return (
-    <section className="relative mx-auto bg-[#151515] shadow-lg rounded-2xl max-w-[1100px] p-4 my-10">
+    <section className="relative mx-auto bg-[#151515]  shadow-lg rounded-2xl max-w-[1100px] p-4 my-10">
       <Swiper
         loop={true}
         modules={[Mousewheel, Pagination]}
@@ -55,7 +55,7 @@ export default function ProcedureSwiper() {
           <SwiperSlide key={slide.id}>
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6">
               <div className="w-full lg:w-1/3 flex items-center">
-                <div className="relative mx-auto lg:mx-0 w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] rounded-2xl overflow-hidden bg-gradient-to-r from-[#c0a06200] to-[#c0a062bc]">
+                <div className="relative mx-auto lg:mx-0 w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] rounded-2xl overflow-hidden bg-gradient-to-b lg:bg-gradient-to-r from-[#c0a06200] to-[#c0a062bc]">
                   <Image
                     src={slide.image}
                     alt={slide.title}
@@ -65,7 +65,7 @@ export default function ProcedureSwiper() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left mb-9 px-9 lg:pl-0 lg:pr-[5%]">
+              <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left mb-9 px-5 lg:pl-0 lg:pr-[5%]">
                 <h3 className="text-xl font-bold mb-4 text-[#ffffff]">
                   {slide.title}
                 </h3>
