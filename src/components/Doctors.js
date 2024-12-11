@@ -14,7 +14,7 @@ export default function Doctors() {
             fill
             className="pt-[3%] object-contain"
           />
-          <div className="absolute -bottom-16 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
+          <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
             <h5 className="text-xl font-semibold">Bülent Cihantimur MD</h5>
             <p className="text-md py-2 ">
               Aesthetics, Plastic and Reconstructive Surgeon
@@ -47,7 +47,7 @@ export default function Doctors() {
             fill
             className="pt-[3%] object-contain"
           />
-          <div className="absolute -bottom-16 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
+          <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
             <h5 className="text-xl font-semibold">Bülent Cihantimur MD</h5>
             <p className="text-md py-2 ">
               Aesthetics, Plastic and Reconstructive Surgeon
@@ -80,7 +80,7 @@ export default function Doctors() {
             fill
             className="pt-[3%] object-contain"
           />
-          <div className="absolute -bottom-16 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
+          <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
             <h5 className="text-xl font-semibold">Bülent Cihantimur MD</h5>
             <p className="text-md py-2 ">
               Aesthetics, Plastic and Reconstructive Surgeon
