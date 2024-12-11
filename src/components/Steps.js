@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Steps() {
   return (
-    <div className="flex flex-row w-100 px-[10%] justify-center items-center bg-[#151515]">
-      <div className="w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px]">
+    <div className="flex flex-col lg:flex-row w-100 px-[10%] justify-center items-center bg-[#151515]">
+      <div className="w-full lg:w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px]">
         <Image
           src="/steps/step1Icon.webp"
           alt="logo"
@@ -19,7 +19,7 @@ export default function Steps() {
           Patients.
         </p>
       </div>
-      <div className="w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px] ">
+      <div className="w-full lg:w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px] ">
         <Image
           className="filter grayscale pt-5"
           src="/steps/step2Icon.webp"
@@ -33,7 +33,7 @@ export default function Steps() {
           concerns of three patients who are not happy with their appearance.
         </p>
       </div>
-      <div className="w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px]">
+      <div className="w-full lg:w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px]">
         <Image
           src="/steps/step3Icon.webp"
           alt="logo"

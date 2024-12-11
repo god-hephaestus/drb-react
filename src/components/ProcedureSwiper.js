@@ -11,23 +11,26 @@ export default function ProcedureSwiper() {
     {
       id: 1,
       image: "/doctor-b-logo.webp",
-      title: "Facelift & Rejuvenation",
+      title: "Facelift",
       description:
-        "Facelift, Neck lift, Rhinoplasty, Eyelid Surgery, and more.",
+        "A comprehensive facelift procedure to lift sagging skin, reduce wrinkles, and restore a youthful appearance, offering natural-looking results, as well as some other non-surgical techniques like the Spider Web Aesthetic Treatment which uses threads to tighten and stimulate collagen production for a refreshed, lifted look without the need for invasive surgery.",
       buttonText: "Learn More",
     },
     {
       id: 2,
       image: "/doctor-b-logo.webp",
-      title: "Body Contouring",
-      description: "Liposuction, Tummy Tuck, Mommy Makeovers.",
+      title: "Rhinoplasty (Nose Job) Surgery ",
+      description:
+        "At Estetik International, Dr. B offers a range of rhinoplasty options, including open, closed, revision, and non-surgical rhinoplasty, tailored to each patient’s unique needs for both aesthetic enhancement and functional concerns, like breathing issues.",
       buttonText: "Learn More",
     },
     {
       id: 3,
       image: "/doctor-b-logo.webp",
-      title: "Non-Surgical Treatments",
-      description: "Botox, Fillers, Spider Web Aesthetic, and Exosomes.",
+      title:
+        "Breast Augmentation, Breast Lift (Mastopexy), and Breast Reductions",
+      description:
+        "Customized procedures to enhance the size, shape, and position of your breasts. Whether you're looking to increase volume with implants or fat transfer, restore firmness after aging or pregnancy, or reduce discomfort from overly large breasts, these surgeries are designed to improve proportion, comfort, and confidence with natural-looking results.",
       buttonText: "Learn More",
     },
   ];
@@ -62,16 +65,16 @@ export default function ProcedureSwiper() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left mb-9">
-                <h3 className="text-2xl font-bold mb-4 text-[#ffffff]">
+              <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left mb-9 px-9 lg:pl-0 lg:pr-[5%]">
+                <h3 className="text-xl font-bold mb-4 text-[#ffffff]">
                   {slide.title}
                 </h3>
-                <p className="text-sm mb-6 leading-relaxed text-[#ffffff]">
+                <p className="text-md mb-6 leading-relaxed text-[#ffffff]">
                   {slide.description}
                 </p>
                 <a
                   href="#"
-                  className="text-center w-[200px] px-6 py-3 rounded-full font-medium text-white bg-gradient-to-r from-[#c0a062de] to-[#c0a062] transition-opacity duration-200 hover:opacity-80"
+                  className="text-center w-[180px] py-3 rounded-full font-medium text-white bg-gradient-to-r from-[#c0a062de] to-[#c0a062] transition-opacity duration-200 hover:opacity-80"
                 >
                   {slide.buttonText}
                 </a>
