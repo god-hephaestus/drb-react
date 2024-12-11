@@ -4,14 +4,15 @@ import Steps from "../components/Steps";
 import VideoSwiper from "../components/VideoSwiper";
 import ProcedureSwiper from "../components/ProcedureSwiper";
 import ClinicImgs from "../components/ClinicImgs";
+import Doctors from "../components/Doctors";
 
 export default function Home() {
   return (
     <main
       style={{
         backgroundImage: 'url("/bodyBg.webp")',
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundRepeat: "repeat",
         backgroundPosition: "center",
       }}
     >
@@ -21,6 +22,7 @@ export default function Home() {
       <Steps></Steps>
       <ProcedureSwiper></ProcedureSwiper>
       <ClinicImgs></ClinicImgs>
+      <Doctors></Doctors>
     </main>
   );
 }
