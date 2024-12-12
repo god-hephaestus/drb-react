@@ -26,14 +26,14 @@ const artPieces = [
 
 export default function ArtPieces() {
   return (
-    <section className="pt-[35px] pb-[35px] bg-[#151515]">
+    <section className="pt-[35px] my-9 pb-[35px] bg-[#151515]">
       <div>
         <div className="text-center mb-[60px]">
-          <h3 className="text-[40px] leading-[44px] tracking-[-0.02em] text-[#c0a062]">
+          <h3 className="text-[40px] leading-[44px] text-[#c0a062]">
             Doctor B Art Pieces
           </h3>
         </div>
-        <div className="flex flex-wrap justify-around lg:justify-center mt-[60px] ">
+        <div className="flex flex-wrap justify-around lg:justify-center mt-[60px] container mx-auto">
           {artPieces.map((piece, index) => (
             <div
               key={index}
@@ -44,7 +44,7 @@ export default function ArtPieces() {
                 alt={`Doctor B art piece ${index + 1}`}
                 width={piece.width}
                 height={piece.height}
-                className="object-contain h-full transition ease-in-out duration-200"
+                className="object-contain h-full"
               />
             </div>
           ))}

@@ -34,7 +34,7 @@ export default function Doctors() {
                   <span className="font-bold">10000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                  Operations <br /> done
+                  Performed <br /> Procedures
                 </span>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function Doctors() {
                   <span className="font-bold">10000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                  Operations <br /> done
+                  Performed <br /> Procedures
                 </span>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function Doctors() {
                   <span className="font-bold">6000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                  Operations <br /> Done
+                  Performed <br /> Procedures
                 </span>
               </div>
             </div>

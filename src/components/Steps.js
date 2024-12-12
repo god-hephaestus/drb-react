@@ -12,10 +12,10 @@ export default function Steps() {
           className="pt-5"
         />
         <h3 className="text-[#c0a062] text-lg leading-8">
-          90% Recommendation Rate
+          99% Recommendation Rate
         </h3>
         <p className="pb-5 font-semibold">
-          Estetik International has 90% Recommendation Rate from +5,000
+          Estetik International has 99% Recommendation Rate from +5,000
           Patients.
         </p>
       </div>

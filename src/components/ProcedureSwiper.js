@@ -14,7 +14,7 @@ export default function ProcedureSwiper() {
       title: "Facelift",
       description:
         "A comprehensive facelift procedure to lift sagging skin, reduce wrinkles, and restore a youthful appearance, offering natural-looking results, as well as some other non-surgical techniques like the Spider Web Aesthetic Treatment which uses threads to tighten and stimulate collagen production for a refreshed, lifted look without the need for invasive surgery.",
-      buttonText: "Learn More",
+      buttonText: "Book a Consultation",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export default function ProcedureSwiper() {
       title: "Rhinoplasty (Nose Job) Surgery ",
       description:
         "At Estetik International, Dr. B offers a range of rhinoplasty options, including open, closed, revision, and non-surgical rhinoplasty, tailored to each patient’s unique needs for both aesthetic enhancement and functional concerns, like breathing issues.",
-      buttonText: "Learn More",
+      buttonText: "Book a Consultation",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export default function ProcedureSwiper() {
         "Breast Augmentation, Breast Lift (Mastopexy), and Breast Reductions",
       description:
         "Customized procedures to enhance the size, shape, and position of your breasts. Whether you're looking to increase volume with implants or fat transfer, restore firmness after aging or pregnancy, or reduce discomfort from overly large breasts, these surgeries are designed to improve proportion, comfort, and confidence with natural-looking results.",
-      buttonText: "Learn More",
+      buttonText: "Book a Consultation",
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ export default function ProcedureSwiper() {
       title: "Eyelid Surgery",
       description:
         "Address sagging eyelids and puffiness with eyelid surgery, designed to restore a refreshed, youthful look and improve the contour of your eyes, by removing excess skin, fat, and muscle from the upper or lower eyelids.",
-      buttonText: "Learn More",
+      buttonText: "Book a Consultation",
     },
 
     {
@@ -48,7 +48,7 @@ export default function ProcedureSwiper() {
       title: "Mommy Makeover",
       description:
         "A personalized combination of procedures designed to restore a woman’s body after pregnancy and breastfeeding. Typically, this includes breast augmentation, tummy tuck, and liposuction.",
-      buttonText: "Learn More",
+      buttonText: "Book a Consultation",
     },
     {
       id: 6,
@@ -56,7 +56,7 @@ export default function ProcedureSwiper() {
       title: "Liposuction",
       description:
         "Liposuction is an effective procedure to remove stubborn fat from areas like the abdomen, thighs, arms, and back, reshaping your body and helping you achieve a slimmer, more toned appearance.",
-      buttonText: "Learn More",
+      buttonText: "Book a Consultation",
     },
     {
       id: 7,
@@ -64,7 +64,7 @@ export default function ProcedureSwiper() {
       title: "Gynecomastia",
       description:
         "Remove excess fat and tissue, restoring a flatter, more masculine chest contour. This procedure helps improve self-confidence and body image for men who feel self-conscious about their chest appearance.",
-      buttonText: "Learn More",
+      buttonText: "Book a Consultation",
     },
   ];
 
@@ -98,7 +98,7 @@ export default function ProcedureSwiper() {
                 </div>
               </div>
               <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left mb-9 px-5 lg:pl-0 lg:pr-[5%]">
-                <h3 className="text-xl font-bold mb-4 text-[#ffffff]">
+                <h3 className="text-2xl font-bold mb-4 text-[#c0a062]">
                   {slide.title}
                 </h3>
                 <p className="text-md mb-6 leading-relaxed text-[#ffffff]">
