@@ -42,13 +42,13 @@ export default function Doctors() {
         </div>
         <div className="mb-32 lg:mb-0 relative w-full lg:w-1/3 flex flex-col bg-gradient-to-b from-transparent to-[#c0a062] max-w-[400px] h-[400px] rounded-[30px] justify-center items-center">
           <Image
-            src="/doctors/team1Doctor.webp"
+            src="/doctors/team2Doctor.webp"
             alt="Doctor B Logo"
             fill
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">Bülent Cihantimur MD</h5>
+            <h5 className="text-xl font-semibold">Prof. Dr. Cenk Şen</h5>
             <p className="text-md py-2 ">
               Aesthetics, Plastic and Reconstructive Surgeon
             </p>
@@ -75,13 +75,13 @@ export default function Doctors() {
         </div>
         <div className="mb-32 lg:mb-0 relative w-full lg:w-1/3 flex flex-col bg-gradient-to-b from-transparent to-[#c0a062] max-w-[400px] h-[400px] rounded-[30px] justify-center items-center">
           <Image
-            src="/doctors/team1Doctor.webp"
+            src="/doctors/team3Doctor.webp"
             alt="Doctor B Logo"
             fill
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">Bülent Cihantimur MD</h5>
+            <h5 className="text-xl font-semibold">Fevzi Kunter Erten MD</h5>
             <p className="text-md py-2 ">
               Aesthetics, Plastic and Reconstructive Surgeon
             </p>

@@ -1,12 +1,55 @@
 import Image from "next/image";
 
+const artPieces = [
+  { src: "/gold/1.webp", width: 175, height: 180, tailwindClass: "lg:w-[14%]" },
+  { src: "/gold/2.webp", width: 227, height: 180, tailwindClass: "lg:w-[20%]" },
+  { src: "/gold/3.webp", width: 131, height: 180, tailwindClass: "lg:w-[15%]" },
+  { src: "/gold/4.webp", width: 175, height: 180, tailwindClass: "lg:w-[15%]" },
+  { src: "/gold/5.webp", width: 135, height: 180, tailwindClass: "lg:w-[13%]" },
+  { src: "/gold/6.webp", width: 220, height: 180, tailwindClass: "lg:w-[20%]" },
+  { src: "/gold/7.webp", width: 154, height: 180, tailwindClass: "lg:w-[19%]" },
+  { src: "/gold/8.webp", width: 265, height: 180, tailwindClass: "lg:w-[23%]" },
+  { src: "/gold/9.webp", width: 129, height: 180, tailwindClass: "lg:w-[13%]" },
+  {
+    src: "/gold/10.webp",
+    width: 227,
+    height: 180,
+    tailwindClass: "lg:w-[16%]",
+  },
+  {
+    src: "/gold/11.webp",
+    width: 264,
+    height: 180,
+    tailwindClass: "lg:w-[27%]",
+  },
+];
+
 export default function ArtPieces() {
   return (
-    <div>
-      <h4 className="text-[#c0a062]">Doctor B Art Pieces</h4>
-      <div className="flex justify-center">
-        <Image></Image>
+    <section className="pt-[35px] pb-[35px] bg-[#151515]">
+      <div>
+        <div className="text-center mb-[60px]">
+          <h3 className="text-[40px] leading-[44px] tracking-[-0.02em] text-[#c0a062]">
+            Doctor B Art Pieces
+          </h3>
+        </div>
+        <div className="flex flex-wrap justify-around lg:justify-center mt-[60px] ">
+          {artPieces.map((piece, index) => (
+            <div
+              key={index}
+              className={`${piece.tailwindClass} flex justify-center text-center mb-[20px] flex-shrink-0`}
+            >
+              <Image
+                src={piece.src}
+                alt={`Doctor B art piece ${index + 1}`}
+                width={piece.width}
+                height={piece.height}
+                className="object-contain h-full transition ease-in-out duration-200"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -5,6 +5,7 @@ import VideoSwiper from "../components/VideoSwiper";
 import ProcedureSwiper from "../components/ProcedureSwiper";
 import ClinicImgs from "../components/ClinicImgs";
 import Doctors from "../components/Doctors";
+import ArtPieces from "../components/ArtPieces";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <ProcedureSwiper></ProcedureSwiper>
       <ClinicImgs></ClinicImgs>
       <Doctors></Doctors>
+      <ArtPieces></ArtPieces>
     </main>
   );
 }
