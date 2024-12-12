@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 
 export default function ClinicImgs() {
@@ -25,13 +26,13 @@ export default function ClinicImgs() {
   };
 
   return (
-    <div>
+    <div className="container mx-auto px-4">
       <h4 className="text-center my-8 text-4xl text-[#c0a062] font-semibold">
         Doctor B Clinic
       </h4>
 
       <div className="relative flex justify-center">
-        <div className="relative w-[85%] lg:w-[70%] h-[400px] max-w-[1100px] lg:h-[400px] overflow-hidden rounded-lg ">
+        <div className="relative w-full max-w-[1100px] aspect-[3/2] max-h-[600px] overflow-hidden rounded-lg">
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -39,10 +40,11 @@ export default function ClinicImgs() {
                 index === activeIndex ? "opacity-100" : "opacity-0"
               }`}
             >
-              <img
+              <Image
                 src={slide}
                 alt={`Clinic Image ${index + 1}`}
-                className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                fill
+                className="object-cover"
               />
             </div>
           ))}
@@ -52,7 +54,7 @@ export default function ClinicImgs() {
           {slides.map((_, index) => (
             <button
               key={index}
-              className={` h-2 rounded-full ${
+              className={`h-2 rounded-full ${
                 index === activeIndex
                   ? "bg-[#c0a062] w-6"
                   : "bg-white bg-opacity-50 w-2"
@@ -68,51 +70,43 @@ export default function ClinicImgs() {
 
         <button
           type="button"
-          className="absolute top-0 left-[4%] lg:left-[7%] xl:left-[12%] z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          className="absolute top-1/2 left-4 lg:left-8 z-30 flex items-center justify-center h-10 w-10 transform -translate-y-1/2 bg-[#c0a062] rounded-full focus:outline-none"
           onClick={handlePrev}
         >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#c0a062] ">
-            <svg
-              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 1 1 5l4 4"
-              />
-            </svg>
-            <span className="sr-only">Previous</span>
-          </span>
+          <svg
+            className="w-4 h-4 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
         </button>
         <button
           type="button"
-          className="absolute top-0 right-[4%] lg:right-[7%] xl:right-[12%] z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          className="absolute top-1/2 right-4 lg:right-8 z-30 flex items-center justify-center h-10 w-10 transform -translate-y-1/2 bg-[#c0a062] rounded-full focus:outline-none"
           onClick={handleNext}
         >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#c0a062]">
-            <svg
-              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 9l4-4-4-4"
-              />
-            </svg>
-            <span className="sr-only">Next</span>
-          </span>
+          <svg
+            className="w-4 h-4 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 9l4-4-4-4"
+            />
+          </svg>
         </button>
       </div>
     </div>

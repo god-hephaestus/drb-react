@@ -31,7 +31,7 @@ export default function Doctors() {
 
               <div className="flex flex-col justify-center items-center">
                 <div className="text-black rounded-md bg-[#c0a062] w-16 h-16 flex items-center justify-center">
-                  <span className="font-bold">15000+</span>
+                  <span className="font-bold">10000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
                   Operations <br /> done
@@ -64,7 +64,7 @@ export default function Doctors() {
 
               <div className="flex flex-col justify-center items-center">
                 <div className="text-black rounded-md bg-[#c0a062] w-16 h-16 flex items-center justify-center">
-                  <span className="font-bold">15000+</span>
+                  <span className="font-bold">10000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
                   Operations <br /> done
@@ -88,7 +88,7 @@ export default function Doctors() {
             <div className="flex justify-around">
               <div className="flex flex-col justify-center items-center">
                 <div className="text-black rounded-md bg-[#c0a062] w-16 h-16 flex items-center justify-center">
-                  <span className="font-bold">30+</span>
+                  <span className="font-bold">5+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
                   Years of <br /> Experience
@@ -97,7 +97,7 @@ export default function Doctors() {
 
               <div className="flex flex-col justify-center items-center">
                 <div className="text-black rounded-md bg-[#c0a062] w-16 h-16 flex items-center justify-center">
-                  <span className="font-bold">15000+</span>
+                  <span className="font-bold">6000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
                   Operations <br /> Done
