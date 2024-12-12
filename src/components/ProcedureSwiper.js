@@ -10,7 +10,7 @@ export default function ProcedureSwiper() {
   const slides = [
     {
       id: 1,
-      image: "/doctor-b-logo.webp",
+      image: "/procedures/5.webp",
       title: "Facelift",
       description:
         "A comprehensive facelift procedure to lift sagging skin, reduce wrinkles, and restore a youthful appearance, offering natural-looking results, as well as some other non-surgical techniques like the Spider Web Aesthetic Treatment which uses threads to tighten and stimulate collagen production for a refreshed, lifted look without the need for invasive surgery.",
@@ -18,7 +18,7 @@ export default function ProcedureSwiper() {
     },
     {
       id: 2,
-      image: "/doctor-b-logo.webp",
+      image: "/procedures/1.webp",
       title: "Rhinoplasty (Nose Job) Surgery ",
       description:
         "At Estetik International, Dr. B offers a range of rhinoplasty options, including open, closed, revision, and non-surgical rhinoplasty, tailored to each patient’s unique needs for both aesthetic enhancement and functional concerns, like breathing issues.",
@@ -26,11 +26,44 @@ export default function ProcedureSwiper() {
     },
     {
       id: 3,
-      image: "/doctor-b-logo.webp",
+      image: "/procedures/7.webp",
       title:
         "Breast Augmentation, Breast Lift (Mastopexy), and Breast Reductions",
       description:
         "Customized procedures to enhance the size, shape, and position of your breasts. Whether you're looking to increase volume with implants or fat transfer, restore firmness after aging or pregnancy, or reduce discomfort from overly large breasts, these surgeries are designed to improve proportion, comfort, and confidence with natural-looking results.",
+      buttonText: "Learn More",
+    },
+    {
+      id: 4,
+      image: "/procedures/4.webp",
+      title: "Eyelid Surgery",
+      description:
+        "Address sagging eyelids and puffiness with eyelid surgery, designed to restore a refreshed, youthful look and improve the contour of your eyes, by removing excess skin, fat, and muscle from the upper or lower eyelids.",
+      buttonText: "Learn More",
+    },
+
+    {
+      id: 5,
+      image: "/procedures/3.webp",
+      title: "Mommy Makeover",
+      description:
+        "A personalized combination of procedures designed to restore a woman’s body after pregnancy and breastfeeding. Typically, this includes breast augmentation, tummy tuck, and liposuction.",
+      buttonText: "Learn More",
+    },
+    {
+      id: 6,
+      image: "/procedures/6.webp",
+      title: "Liposuction",
+      description:
+        "Liposuction is an effective procedure to remove stubborn fat from areas like the abdomen, thighs, arms, and back, reshaping your body and helping you achieve a slimmer, more toned appearance.",
+      buttonText: "Learn More",
+    },
+    {
+      id: 7,
+      image: "/procedures/2.webp",
+      title: "Gynecomastia",
+      description:
+        "Remove excess fat and tissue, restoring a flatter, more masculine chest contour. This procedure helps improve self-confidence and body image for men who feel self-conscious about their chest appearance.",
       buttonText: "Learn More",
     },
   ];
