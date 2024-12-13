@@ -69,7 +69,7 @@ export default function ProcedureSwiper() {
   ];
 
   return (
-    <section className="relative mx-auto bg-[#151515]  shadow-lg rounded-2xl max-w-[1100px] p-4 my-10">
+    <section className="relative mx-auto bg-[#151515]  shadow-lg rounded-2xl max-w-[1280px] p-4 my-10">
       <Swiper
         loop={true}
         modules={[Mousewheel, Pagination]}

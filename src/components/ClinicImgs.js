@@ -27,12 +27,12 @@ export default function ClinicImgs() {
 
   return (
     <div className="container mx-auto px-4">
-      <h4 className="text-center my-8 text-4xl text-[#c0a062] font-semibold">
+      <h4 className="text-center my-9 text-4xl text-[#c0a062] font-semibold">
         Doctor B Clinic
       </h4>
 
       <div className="relative flex justify-center">
-        <div className="relative w-full max-w-[1100px] aspect-[3/2] max-h-[600px] overflow-hidden rounded-lg">
+        <div className="relative w-full max-w-[1280px] aspect-[3/2] max-h-[600px] overflow-hidden rounded-lg">
           {slides.map((slide, index) => (
             <div
               key={index}

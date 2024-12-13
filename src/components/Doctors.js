@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function Doctors() {
   return (
     <div className="pb-12">
-      <h3 className="text-4xl text-[#c0a062] font-semibold text-center mt-8">
+      <h3 className="text-4xl text-[#c0a062] font-semibold text-center mt-9">
         Meet Doctor B Team
       </h3>
-      <div className="container mx-auto mt-8 mb-24 gap-8 shadow-lg flex flex-col lg:flex-row justify-center items-center">
+      <div className="container mx-auto mt-9 mb-24 gap-8 shadow-lg flex flex-col lg:flex-row justify-center items-center">
         <div className="mb-32 lg:mb-0 relative w-full lg:w-1/3 flex flex-col bg-gradient-to-b from-transparent to-[#c0a062] max-w-[400px] h-[400px] rounded-[30px] justify-center items-center">
           <Image
             src="/doctors/team1Doctor.webp"

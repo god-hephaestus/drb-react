@@ -46,3 +46,12 @@ body {
   border-radius: 15px !important;
   border-color: transparent !important;
 }
+::selection {
+  background-color: black;
+  color: #c0a162;
+}
+
+::-moz-selection {
+  background-color: black;
+  color: #c0a162;
+}

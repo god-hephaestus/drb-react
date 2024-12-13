@@ -6,6 +6,7 @@ import ProcedureSwiper from "../components/ProcedureSwiper";
 import ClinicImgs from "../components/ClinicImgs";
 import Doctors from "../components/Doctors";
 import ArtPieces from "../components/ArtPieces";
+import Advantages from "../components/Advantages";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <ClinicImgs></ClinicImgs>
       <Doctors></Doctors>
       <ArtPieces></ArtPieces>
+      <Advantages></Advantages>
     </main>
   );
 }
