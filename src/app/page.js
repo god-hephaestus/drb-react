@@ -8,6 +8,7 @@ import Doctors from "../components/Doctors";
 import ArtPieces from "../components/ArtPieces";
 import Advantages from "../components/Advantages";
 import Bout2 from "../components/Bout2";
+import Recognitions from "../components/Recognitions";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <ArtPieces></ArtPieces>
       <Advantages></Advantages>
       <Bout2></Bout2>
+      <Recognitions></Recognitions>
     </main>
   );
 }
