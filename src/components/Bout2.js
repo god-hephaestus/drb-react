@@ -22,7 +22,7 @@ export default function Bout2() {
         <div className="flex flex-wrap">
           <div className="hidden lg:block lg:w-1/2"></div>
           <div className="w-full lg:w-1/2">
-            <div className="pt-[10%] lg:ps-[10%]">
+            <div className="pt-[5%] pr-[10%]">
               <h2 className="text-4xl text-[#c0a062] font-bold mb-5 lg:text-left text-center ">
                 Meet The Pioneer in Aesthetic Surgery
               </h2>
