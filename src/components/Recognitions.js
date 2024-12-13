@@ -15,7 +15,9 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">Success Oscars</p>
+            <p className="text-lg font-semibold p-2 text-center">
+              Success Oscars
+            </p>
           </div>
           <div className="lg:w-1/4 w-1/2 flex flex-col justify-center items-center py-4">
             <Image
@@ -24,7 +26,9 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">Excellence Award</p>
+            <p className="text-lg font-semibold p-2 text-center">
+              Excellence Award
+            </p>
           </div>
           <div className="lg:w-1/4 w-1/2 flex flex-col justify-center items-center py-4">
             <Image
@@ -33,7 +37,9 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">Physician Of The Year</p>
+            <p className="text-lg font-semibold p-2 text-center">
+              Physician Of The Year
+            </p>
           </div>
           <div className="lg:w-1/4 w-1/2 flex flex-col justify-center items-center py-4">
             <Image
@@ -42,7 +48,7 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">
+            <p className="text-lg font-semibold p-2 text-center">
               Outstanding Contribution Award
             </p>
           </div>

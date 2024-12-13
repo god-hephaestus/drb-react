@@ -49,7 +49,7 @@ export default function Hero() {
             type="button"
             className="mt-6 text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-10 py-3 shadow-lg monument-heading"
           >
-            Get a Quote
+            Book a Consultation
           </button>
         </div>
       </div>

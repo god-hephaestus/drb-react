@@ -25,7 +25,7 @@ export default function Bout() {
               <h2 className="text-4xl text-[#c0a062] font-bold mb-5 lg:text-left text-center ">
                 About Doctor B
               </h2>
-              <p className="text-left lg:text-left md:text-center">
+              <p className=" lg:text-left text-center p-2">
                 Experience a new level of aesthetic excellence with Doctor
                 Bulent Cihantimur, a world-renowned plastic surgeon who is
                 dedicated to enhancing your natural beauty and providing

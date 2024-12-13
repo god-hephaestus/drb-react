@@ -26,7 +26,7 @@ export default function Bout2() {
               <h2 className="text-4xl text-[#c0a062] font-bold mb-5 lg:text-left text-center ">
                 Meet The Pioneer in Aesthetic Surgery
               </h2>
-              <p className="text-left lg:text-left md:text-center">
+              <p className="p-2 lg:text-left text-center">
                 There is a principle in medicine: Non-maleficence is probably
                 the best known of the principles. In short, it means, “to do no
                 harm.” If you can treat with simple methods, try those methods

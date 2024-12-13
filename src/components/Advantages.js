@@ -15,7 +15,7 @@ export default function Advantages() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">
+            <p className="text-lg font-semibold p-2 text-center">
               30+ Years Of Experience
             </p>
           </div>
@@ -26,7 +26,9 @@ export default function Advantages() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">World-renowned Doctor</p>
+            <p className="text-lg font-semibold p-2 text-center">
+              World-renowned Doctor
+            </p>
           </div>
           <div className="lg:w-1/3 w-1/2 flex flex-col justify-center items-center py-4">
             <Image
@@ -35,7 +37,9 @@ export default function Advantages() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">Golden Bistoury Awards</p>
+            <p className="text-lg font-semibold p-2 text-center">
+              Golden Bistoury Awards
+            </p>
           </div>
           <div className="lg:w-1/3 w-1/2 flex flex-col justify-center items-center py-4">
             <Image
@@ -44,7 +48,9 @@ export default function Advantages() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">Top Medical Standards</p>
+            <p className="text-lg font-semibold p-2 text-center">
+              Top Medical Standards
+            </p>
           </div>
           <div className="lg:w-1/3 w-1/2 flex flex-col justify-center items-center py-4">
             <Image
@@ -53,7 +59,7 @@ export default function Advantages() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">
+            <p className="text-lg font-semibold p-2 text-center">
               Patented Special Techniques
             </p>
           </div>
@@ -64,7 +70,7 @@ export default function Advantages() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold py-2">
+            <p className="text-lg font-semibold p-2 text-center">
               The Best Medical Center in Turkey
             </p>
           </div>
