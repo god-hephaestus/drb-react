@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Steps() {
   return (
-    <div className="flex flex-col lg:flex-row w-100 px-[10%] justify-center items-center bg-[#151515]">
+    <div className="flex flex-col lg:flex-row w-100 px-[10%] justify-center items-center bg-[#151515] mb-9">
       <div className="w-full lg:w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px]">
         <Image
           src="/steps/step1Icon.webp"

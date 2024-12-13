@@ -7,6 +7,7 @@ import ClinicImgs from "../components/ClinicImgs";
 import Doctors from "../components/Doctors";
 import ArtPieces from "../components/ArtPieces";
 import Advantages from "../components/Advantages";
+import Bout2 from "../components/Bout2";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <Doctors></Doctors>
       <ArtPieces></ArtPieces>
       <Advantages></Advantages>
+      <Bout2></Bout2>
     </main>
   );
 }
