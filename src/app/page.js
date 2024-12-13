@@ -9,6 +9,7 @@ import ArtPieces from "../components/ArtPieces";
 import Advantages from "../components/Advantages";
 import Bout2 from "../components/Bout2";
 import Recognitions from "../components/Recognitions";
+import Strip from "../components/Strip";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <Advantages></Advantages>
       <Bout2></Bout2>
       <Recognitions></Recognitions>
+      <Strip></Strip>
     </main>
   );
 }
