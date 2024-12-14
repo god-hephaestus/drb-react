@@ -1,4 +1,5 @@
 import Image from "next/image";
+import GradientButton from "../components/GradientButton";
 
 export default function Hero() {
   return (
@@ -16,15 +17,6 @@ export default function Hero() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
 
         <div className="relative mt-[35%] lg:mt-[10%] z-10 flex flex-col items-center text-center text-white gap-4 lg:gap-6">
-          {/* <Image
-            aria-hidden
-            src="/doctor-b-logo.webp"
-            alt="Doctor B Logo"
-            width={180}
-            height={155}
-            className="pt-[3%]"
-          /> */}
-
           <p className="text-2xl font-light monument-font monument-heading">
             Discover <br />
             <span className="text-[#c0a062]">
@@ -45,12 +37,7 @@ export default function Hero() {
             sizes="(max-width: 768px) 350px, 520px"
           />
 
-          <button
-            type="button"
-            className="mt-6 text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-10 py-3 shadow-lg monument-heading"
-          >
-            Book a Consultation
-          </button>
+          <GradientButton></GradientButton>
         </div>
       </div>
     </div>
