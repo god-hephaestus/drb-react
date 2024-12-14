@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="h-screen w-full relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center ">
+      <div className="h-[800px] lg:h-screen w-full relative overflow-hidden">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover blur-sm"
           src="/herovideo.mp4"
@@ -15,17 +15,17 @@ export default function Hero() {
 
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
 
-        <div className="relative z-10 flex flex-col items-center text-center text-white gap-4 lg:gap-6">
-          <Image
+        <div className="relative mt-[35%] lg:mt-[10%] z-10 flex flex-col items-center text-center text-white gap-4 lg:gap-6">
+          {/* <Image
             aria-hidden
             src="/doctor-b-logo.webp"
             alt="Doctor B Logo"
             width={180}
             height={155}
             className="pt-[3%]"
-          />
+          /> */}
 
-          <p className="text-2xl  font-light monument-font monument-heading">
+          <p className="text-2xl font-light monument-font monument-heading">
             Discover <br />
             <span className="text-[#c0a062]">
               The Expertise and Artistry of
