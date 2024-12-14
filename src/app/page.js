@@ -11,6 +11,7 @@ import Bout2 from "../components/Bout2";
 import Recognitions from "../components/Recognitions";
 import Strip from "../components/Strip";
 import VideoThree from "../components/VideoThree";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       <Recognitions></Recognitions>
       <Strip></Strip>
       <VideoThree></VideoThree>
+      <Footer></Footer>
     </main>
   );
 }
