@@ -10,6 +10,7 @@ import Advantages from "../components/Advantages";
 import Bout2 from "../components/Bout2";
 import Recognitions from "../components/Recognitions";
 import Strip from "../components/Strip";
+import VideoThree from "../components/VideoThree";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
       <Bout2></Bout2>
       <Recognitions></Recognitions>
       <Strip></Strip>
+      <VideoThree></VideoThree>
     </main>
   );
 }
