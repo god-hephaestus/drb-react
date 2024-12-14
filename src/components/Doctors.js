@@ -15,7 +15,7 @@ export default function Doctors() {
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">Bülent Cihantimur MD</h5>
+            <h5 className="text-xl font-semibold">Op. Dr. Bülent Cihantimur</h5>
             <p className="text-md py-2 ">
               Aesthetics, Plastic and Reconstructive Surgeon
             </p>

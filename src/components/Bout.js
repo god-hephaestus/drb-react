@@ -22,7 +22,7 @@ export default function Bout() {
         <div className="flex flex-wrap">
           <div className="w-full lg:w-1/2">
             <div className="pt-[10%] lg:ps-[10%]">
-              <h2 className="text-4xl text-[#c0a062] font-bold mb-5 lg:text-left text-center ">
+              <h2 className="text-4xl ps-2 text-[#c0a062] font-bold mb-5 lg:text-left text-center ">
                 About Doctor B
               </h2>
               <p className="lg:text-left text-center p-2">
