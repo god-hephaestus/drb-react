@@ -25,10 +25,11 @@ export default function GradientButton() {
         .bg-gradient-animation {
           background: linear-gradient(
             45deg,
-            #ff7eb3,
-            #fc5b76,
             #c0a062,
-            #ff814c
+            #f24e91,
+            #fc5b76,
+            #5542fc,
+            #42b5fc
           );
           background-size: 300% 300%;
           animation: gradientShift 3s ease infinite;
