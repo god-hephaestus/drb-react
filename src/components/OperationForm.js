@@ -12,6 +12,9 @@ export default function Form() {
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("US");
   const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
   const [queryParams, setQueryParams] = useState({
     utm_source: "",
     utm_medium: "",
@@ -21,7 +24,6 @@ export default function Form() {
     utm_ad: "",
     gclid: "",
   });
-  const [phoneError, setPhoneError] = useState("");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -41,7 +43,9 @@ export default function Form() {
         new Intl.DisplayNames(["en"], { type: "region" }).of(code) || "Unknown",
       phoneCode: getCountryCallingCode(code),
     }));
+
     setCountries(allCountries);
+    setFilteredCountries(allCountries);
 
     const detectUserCountry = async () => {
       try {
@@ -73,6 +77,26 @@ export default function Form() {
   const handlePhoneChange = (e) => {
     setPhone(e.target.value);
     if (phoneError) validatePhoneNumber();
+  };
+
+  const handleCountryFilter = (e) => {
+    const search = e.target.value.toLowerCase();
+    setCountryCode(search);
+
+    const filtered = countries.filter(
+      (country) =>
+        country.name.toLowerCase().includes(search) ||
+        country.code.toLowerCase().includes(search) ||
+        country.phoneCode.startsWith(search)
+    );
+
+    setFilteredCountries(filtered);
+    setDropdownVisible(true);
+  };
+
+  const handleCountrySelect = (selectedCode) => {
+    setCountryCode(selectedCode);
+    setDropdownVisible(false);
   };
 
   const handleFormSubmit = async (e) => {
@@ -114,7 +138,7 @@ export default function Form() {
   };
 
   return (
-    <div className="flex justify-center items-center ">
+    <div className="flex justify-center items-center">
       <div
         className="lg:w-1/2 max-w-[549px] h-[424px]"
         style={{ backgroundImage: "url('/formImg.webp')" }}
@@ -123,21 +147,9 @@ export default function Form() {
         onSubmit={handleFormSubmit}
         className="w-full lg:w-1/2 max-w-lg bg-transparent p-6 rounded-lg shadow-md"
       >
-        <input type="hidden" name="utm_source" value={queryParams.utm_source} />
-        <input type="hidden" name="utm_medium" value={queryParams.utm_medium} />
-        <input
-          type="hidden"
-          name="utm_campaign"
-          value={queryParams.utm_campaign}
-        />
-        <input
-          type="hidden"
-          name="utm_content"
-          value={queryParams.utm_content}
-        />
-        <input type="hidden" name="utm_term" value={queryParams.utm_term} />
-        <input type="hidden" name="utm_ad" value={queryParams.utm_ad} />
-        <input type="hidden" name="gclid" value={queryParams.gclid} />
+        {Object.keys(queryParams).map((key) => (
+          <input key={key} type="hidden" name={key} value={queryParams[key]} />
+        ))}
         <input type="hidden" name="type" value="Reactlp" />
 
         <div className="mb-4">
@@ -151,20 +163,32 @@ export default function Form() {
           />
         </div>
 
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <label className="block text-white mb-2">Phone Number</label>
           <div className="flex space-x-2">
-            <select
-              value={countryCode}
-              onChange={(e) => setCountryCode(e.target.value)}
-              className="w-1/2 px-3 py-2 border rounded-lg placeholder-black text-black"
-            >
-              {countries.map((country) => (
-                <option key={country.code} value={country.code}>
-                  {country.name} (+{country.phoneCode})
-                </option>
-              ))}
-            </select>
+            <div className="relative w-1/2">
+              <input
+                type="text"
+                value={countryCode}
+                onChange={handleCountryFilter}
+                placeholder="Search country (name, code, or phone code)"
+                className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
+                onFocus={() => setDropdownVisible(true)}
+              />
+              {dropdownVisible && (
+                <ul className="absolute top-12 left-0 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-auto z-10">
+                  {filteredCountries.map((country) => (
+                    <li
+                      key={country.code}
+                      onClick={() => handleCountrySelect(country.code)}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
+                    >
+                      {country.name} (+{country.phoneCode})
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
             <input
               type="text"
               value={phone}
