@@ -10,6 +10,7 @@ import Advantages from "../components/Advantages";
 import Bout2 from "../components/Bout2";
 import Recognitions from "../components/Recognitions";
 import Strip from "../components/Strip";
+import OperationForm from "../components/OperationForm";
 import VideoThree from "../components/VideoThree";
 import Footer from "../components/Footer";
 
@@ -35,6 +36,7 @@ export default function Home() {
       <Bout2></Bout2>
       <Recognitions></Recognitions>
       <Strip></Strip>
+      <OperationForm></OperationForm>
       <VideoThree></VideoThree>
       <Footer></Footer>
     </main>
