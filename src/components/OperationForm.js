@@ -114,9 +114,9 @@ export default function Form() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen ">
+    <div className="flex justify-center items-center ">
       <div
-        className="w-1/2 max-w-[549px] h-[424px]"
+        className="lg:w-1/2 max-w-[549px] h-[424px]"
         style={{ backgroundImage: "url('/formImg.webp')" }}
       ></div>
       <form
@@ -157,7 +157,7 @@ export default function Form() {
             <select
               value={countryCode}
               onChange={(e) => setCountryCode(e.target.value)}
-              className="w-1/3 px-3 py-2 border rounded-lg placeholder-black text-black"
+              className="w-1/2 px-3 py-2 border rounded-lg placeholder-black text-black"
             >
               {countries.map((country) => (
                 <option key={country.code} value={country.code}>
@@ -171,7 +171,7 @@ export default function Form() {
               onChange={handlePhoneChange}
               onBlur={validatePhoneNumber}
               maxLength={10}
-              className="w-2/3 px-3 py-2 border rounded-lg placeholder-black text-black"
+              className="w-1/2 px-3 py-2 border rounded-lg placeholder-black text-black"
               placeholder="Your phone number"
             />
           </div>
