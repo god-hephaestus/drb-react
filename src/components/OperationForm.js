@@ -1,41 +1,25 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {
   getCountries,
   getCountryCallingCode,
   isValidPhoneNumber,
-} from "libphonenumber-js";
+} from "libphonenumber-js/min";
 
 export default function Form() {
   const [submitted, setSubmitted] = useState(false);
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("US");
   const [countries, setCountries] = useState([]);
-  const [filteredCountries, setFilteredCountries] = useState([]);
-  const [dropdownVisible, setDropdownVisible] = useState(false);
   const [phoneError, setPhoneError] = useState("");
-  const [queryParams, setQueryParams] = useState({
-    utm_source: "",
-    utm_medium: "",
-    utm_campaign: "",
-    utm_content: "",
-    utm_term: "",
-    utm_ad: "",
-    gclid: "",
-  });
+  const [queryParams, setQueryParams] = useState({});
+  const [countryFilter, setCountryFilter] = useState("");
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setQueryParams({
-      utm_source: params.get("utm_source") || "",
-      utm_medium: params.get("utm_medium") || "",
-      utm_campaign: params.get("utm_campaign") || "",
-      utm_content: params.get("utm_content") || "",
-      utm_term: params.get("utm_term") || "",
-      utm_ad: params.get("utm_ad") || "",
-      gclid: params.get("gclid") || "",
-    });
+    setQueryParams(Object.fromEntries(params.entries()));
 
     const allCountries = getCountries().map((code) => ({
       code,
@@ -45,28 +29,41 @@ export default function Form() {
     }));
 
     setCountries(allCountries);
-    setFilteredCountries(allCountries);
 
     const detectUserCountry = async () => {
       try {
         const response = await fetch("https://ipapi.co/json/");
+
         const data = await response.json();
-        setCountryCode(data.country_code || "US");
-      } catch {
+
+        if (data.country_code) {
+          setCountryCode(data.country_code);
+          setCountryFilter(data.country_code);
+        } else {
+          setCountryCode("US");
+          setCountryFilter("US");
+        }
+      } catch (error) {
         setCountryCode("US");
+        setCountryFilter("US");
       }
     };
 
     detectUserCountry();
   }, []);
 
+  const filteredCountries = useMemo(() => {
+    return countries.filter(
+      (country) =>
+        country.name.toLowerCase().includes(countryFilter.toLowerCase()) ||
+        country.code.toLowerCase().includes(countryFilter.toLowerCase()) ||
+        country.phoneCode.startsWith(countryFilter)
+    );
+  }, [countries, countryFilter]);
+
   const validatePhoneNumber = () => {
-    if (
-      !isValidPhoneNumber(
-        `+${getCountryCallingCode(countryCode)}${phone}`,
-        countryCode
-      )
-    ) {
+    const formattedPhone = `+${getCountryCallingCode(countryCode)}${phone}`;
+    if (!isValidPhoneNumber(formattedPhone, countryCode)) {
       setPhoneError("Please enter a valid phone number!");
       return false;
     }
@@ -81,16 +78,7 @@ export default function Form() {
 
   const handleCountryFilter = (e) => {
     const search = e.target.value.toLowerCase();
-    setCountryCode(search);
-
-    const filtered = countries.filter(
-      (country) =>
-        country.name.toLowerCase().includes(search) ||
-        country.code.toLowerCase().includes(search) ||
-        country.phoneCode.startsWith(search)
-    );
-
-    setFilteredCountries(filtered);
+    setCountryFilter(search); // Immediately update the filter text
     setDropdownVisible(true);
   };
 
@@ -99,8 +87,13 @@ export default function Form() {
     setDropdownVisible(false);
   };
 
+  const handleBlur = () => {
+    setDropdownVisible(false);
+  };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
     if (!validatePhoneNumber()) return;
 
     const formData = new FormData(e.target);
@@ -146,16 +139,24 @@ export default function Form() {
       <form
         onSubmit={handleFormSubmit}
         className="w-full lg:w-1/2 max-w-lg bg-transparent p-6 rounded-lg shadow-md"
+        aria-labelledby="form-heading"
       >
+        <h2 id="form-heading" className="text-white text-lg mb-4">
+          Contact Us
+        </h2>
+
         {Object.keys(queryParams).map((key) => (
           <input key={key} type="hidden" name={key} value={queryParams[key]} />
         ))}
         <input type="hidden" name="type" value="Reactlp" />
 
         <div className="mb-4">
-          <label className="block text-white mb-2">Your Name</label>
+          <label className="block text-white mb-2" htmlFor="name">
+            Your Name
+          </label>
           <input
             type="text"
+            id="name"
             name="name"
             required
             className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
@@ -164,24 +165,34 @@ export default function Form() {
         </div>
 
         <div className="mb-4 relative">
-          <label className="block text-white mb-2">Phone Number</label>
+          <label className="block text-white mb-2" htmlFor="phone">
+            Phone Number
+          </label>
           <div className="flex space-x-2">
             <div className="relative w-1/2">
               <input
                 type="text"
-                value={countryCode}
+                id="country"
+                value={countryFilter}
                 onChange={handleCountryFilter}
                 placeholder="Search country (name, code, or phone code)"
                 className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
+                aria-haspopup="listbox"
                 onFocus={() => setDropdownVisible(true)}
+                onBlur={handleBlur}
               />
               {dropdownVisible && (
-                <ul className="absolute top-12 left-0 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-auto z-10">
+                <ul
+                  className="absolute top-12 left-0 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-auto z-10"
+                  role="listbox"
+                >
                   {filteredCountries.map((country) => (
                     <li
                       key={country.code}
                       onClick={() => handleCountrySelect(country.code)}
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
+                      role="option"
+                      aria-selected={country.code === countryCode}
                     >
                       {country.name} (+{country.phoneCode})
                     </li>
@@ -191,23 +202,28 @@ export default function Form() {
             </div>
             <input
               type="text"
+              id="phone"
               value={phone}
               onChange={handlePhoneChange}
-              onBlur={validatePhoneNumber}
               maxLength={10}
               className="w-1/2 px-3 py-2 border rounded-lg placeholder-black text-black"
               placeholder="Your phone number"
             />
           </div>
           {phoneError && (
-            <p className="text-red-500 text-sm mt-2">{phoneError}</p>
+            <p className="text-red-500 text-sm mt-2" role="alert">
+              {phoneError}
+            </p>
           )}
         </div>
 
         <div className="mb-4">
-          <label className="block text-white mb-2">Email</label>
+          <label className="block text-white mb-2" htmlFor="email">
+            Email
+          </label>
           <input
             type="email"
+            id="email"
             name="email"
             required
             className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
