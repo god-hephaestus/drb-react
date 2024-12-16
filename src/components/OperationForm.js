@@ -121,7 +121,7 @@ export default function Form() {
       ></div>
       <form
         onSubmit={handleFormSubmit}
-        className="w-full lg:w-1/2 max-w-lg bg-[#151515] p-6 rounded-lg shadow-md"
+        className="w-full lg:w-1/2 max-w-lg bg-transparent p-6 rounded-lg shadow-md"
       >
         <input type="hidden" name="utm_source" value={queryParams.utm_source} />
         <input type="hidden" name="utm_medium" value={queryParams.utm_medium} />
@@ -146,7 +146,7 @@ export default function Form() {
             type="text"
             name="name"
             required
-            className="w-full px-3 py-2 border rounded-lg"
+            className="w-full px-3 py-2 border rounded-lg placeholder-black"
             placeholder="Enter your name"
           />
         </div>
