@@ -74,7 +74,7 @@ export default function ClinicImgs() {
           onClick={handlePrev}
         >
           <svg
-            className="w-4 h-4 text-white"
+            className="w-4 h-4 text-black"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 6 10"
@@ -94,7 +94,7 @@ export default function ClinicImgs() {
           onClick={handleNext}
         >
           <svg
-            className="w-4 h-4 text-white"
+            className="w-4 h-4 text-black"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 6 10"
