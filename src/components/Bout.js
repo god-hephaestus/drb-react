@@ -1,6 +1,6 @@
 export default function Bout() {
   return (
-    <section className="w-full bg-[#111111] text-white ">
+    <section className="w-full bg-[#111111] text-white lg:px-[10%]">
       <div
         className="container bg-no-repeat bg-center mx-auto about pb-10 lg:h-[400px]"
         style={{

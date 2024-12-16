@@ -146,7 +146,7 @@ export default function Form() {
             type="text"
             name="name"
             required
-            className="w-full px-3 py-2 border rounded-lg placeholder-black"
+            className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
             placeholder="Enter your name"
           />
         </div>
@@ -157,7 +157,7 @@ export default function Form() {
             <select
               value={countryCode}
               onChange={(e) => setCountryCode(e.target.value)}
-              className="w-1/3 px-3 py-2 border rounded-lg"
+              className="w-1/3 px-3 py-2 border rounded-lg placeholder-black text-black"
             >
               {countries.map((country) => (
                 <option key={country.code} value={country.code}>
@@ -171,7 +171,7 @@ export default function Form() {
               onChange={handlePhoneChange}
               onBlur={validatePhoneNumber}
               maxLength={10}
-              className="w-2/3 px-3 py-2 border rounded-lg"
+              className="w-2/3 px-3 py-2 border rounded-lg placeholder-black text-black"
               placeholder="Your phone number"
             />
           </div>
@@ -186,7 +186,7 @@ export default function Form() {
             type="email"
             name="email"
             required
-            className="w-full px-3 py-2 border rounded-lg"
+            className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
             placeholder="Enter your email"
           />
         </div>
@@ -196,7 +196,7 @@ export default function Form() {
           <textarea
             name="message"
             rows="4"
-            className="w-full px-3 py-2 border rounded-lg"
+            className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
             placeholder="Write your message"
           ></textarea>
         </div>
@@ -206,7 +206,7 @@ export default function Form() {
             type="submit"
             disabled={submitted}
             className={`px-6 py-2 text-white rounded-lg ${
-              submitted ? "bg-gray-400" : "bg-blue-500"
+              submitted ? "bg-gray-400" : "bg-[#c0a062]"
             }`}
           >
             {submitted ? "Submitting..." : "Submit"}

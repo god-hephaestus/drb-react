@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Advantages() {
   return (
     <div className="w-full my-9">
-      <div className="container mx-auto">
+      <div className="container mx-auto lg:px-[10%]">
         <h3 className="text-[#c0a062] text-center text-4xl mb-9">
           Why Choose Dr B
         </h3>

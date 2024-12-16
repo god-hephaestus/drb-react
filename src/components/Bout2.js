@@ -1,8 +1,8 @@
 export default function Bout2() {
   return (
-    <section className="w-full bg-[#111111] text-white ">
+    <section className="w-full bg-[#111111] text-white lg:px-[10%]">
       <div
-        className="container bg-no-repeat bg-center mx-auto about2 pb-10 lg:h-[400px]"
+        className="container bg-no-repeat bg-center mx-auto about2 pb-10 lg:h-[400px] "
         style={{
           backgroundImage: 'url("/about2BgMobile.webp")',
           backgroundSize: "contain",
@@ -23,7 +23,7 @@ export default function Bout2() {
           <div className="hidden lg:block lg:w-1/2"></div>
           <div className="w-full lg:w-1/2">
             <div className="pt-[5%] lg:pr-[10%]">
-              <h2 className="text-4xl text-[#c0a062] font-bold mb-5 lg:text-left text-center ">
+              <h2 className="text-4xl p-2 text-[#c0a062] font-bold mb-5 lg:text-left text-center ">
                 Meet The Pioneer in Aesthetic Surgery
               </h2>
               <p className="p-2 lg:text-left text-center">
