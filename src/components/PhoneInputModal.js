@@ -5,11 +5,11 @@ import intlTelInput from "intl-tel-input";
 import "intl-tel-input/build/css/intlTelInput.css";
 
 export default function PhoneInputModal() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const phoneInputRef = useRef(null);
-  const modalRef = useRef(null); // Ref for modal content
-  const itiRef = useRef(null); // Persist intlTelInput instance
+  const modalRef = useRef(null);
+  const itiRef = useRef(null);
 
   // Fetch Country Code for Initial IntlTelInput Setup
   const fetchCountryCode = async () => {
