@@ -1,3 +1,5 @@
+import PhoneInputModal from "./PhoneInputModal";
+
 export default function Strip() {
   return (
     <section className="bg-[#151515] py-5">
@@ -13,12 +15,7 @@ export default function Strip() {
             </p>
           </div>
           <div className="w-full lg:w-1/3 flex justify-end">
-            <button
-              className="px-5 py-3 text-white bg-[#c0a062] font-semibold rounded-md hover:bg-[#a89055] transition-all"
-              title="Book Now"
-            >
-              Book a Consultation
-            </button>
+            <PhoneInputModal></PhoneInputModal>
           </div>
         </div>
       </div>
