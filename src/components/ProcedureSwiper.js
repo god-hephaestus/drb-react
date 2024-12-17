@@ -19,7 +19,7 @@ export default function ProcedureSwiper() {
     {
       id: 2,
       image: "/procedures/1.webp",
-      title: "Rhinoplasty (Nose Job) Surgery ",
+      title: "Rhinoplasty (Nose Job)",
       description:
         "At Estetik International, Dr. B offers a range of rhinoplasty options, including open, closed, revision, and non-surgical rhinoplasty, tailored to each patient’s unique needs for both aesthetic enhancement and functional concerns, like breathing issues.",
       buttonText: "Book a Consultation",
@@ -27,8 +27,7 @@ export default function ProcedureSwiper() {
     {
       id: 3,
       image: "/procedures/7.webp",
-      title:
-        "Breast Augmentation, Breast Lift (Mastopexy), and Breast Reductions",
+      title: "Mammaplasty",
       description:
         "Customized procedures to enhance the size, shape, and position of your breasts. Whether you're looking to increase volume with implants or fat transfer, restore firmness after aging or pregnancy, or reduce discomfort from overly large breasts, these surgeries are designed to improve proportion, comfort, and confidence with natural-looking results.",
       buttonText: "Book a Consultation",
@@ -90,18 +89,19 @@ export default function ProcedureSwiper() {
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6">
+              <div className="flex flex-col lg:flex-row items-center lg:items-start lg:gap-6">
                 <div className="w-full lg:w-1/3 flex items-center">
                   <div className="relative mx-auto lg:mx-0 w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] rounded-2xl overflow-hidden bg-gradient-to-b lg:bg-gradient-to-r from-[#c0a06200] to-[#c0a062bc]">
                     <Image
                       src={slide.image}
                       alt={slide.title}
                       fill
+                      sizes="(max-width: 768px) 70vw, (max-width: 1200px) 33vw, 33vw"
                       className="rounded-2xl object-contain"
                     />
                   </div>
                 </div>
-                <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left mb-9 px-5 lg:pl-0 lg:pr-[5%]">
+                <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left lg:mb-9 px-5 lg:pl-0 lg:pr-[5%]">
                   <h3 className="text-3xl font-bold mb-4 text-[#c0a062] lg:h-[64px]">
                     {slide.title}
                   </h3>
