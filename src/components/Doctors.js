@@ -32,7 +32,7 @@ export default function Doctors() {
 
               <div className="flex flex-col justify-center items-center">
                 <div className="text-black rounded-md bg-[#c0a062] w-16 h-16 flex items-center justify-center">
-                  <span className="font-bold">10000+</span>
+                  <span className="font-bold">20000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
                   Performed <br /> Procedures
@@ -84,7 +84,9 @@ export default function Doctors() {
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">Fevzi Kunter Erten MD</h5>
+            <h5 className="text-xl font-semibold">
+              Op. Dr. Fevzi Kunter Erten
+            </h5>
             <p className="text-md py-2 ">
               Aesthetics, Plastic and Reconstructive Surgeon
             </p>
