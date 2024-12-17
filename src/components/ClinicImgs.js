@@ -44,6 +44,7 @@ export default function ClinicImgs() {
                 src={slide}
                 alt={`Clinic Image ${index + 1}`}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1280px"
                 className="object-cover"
               />
             </div>
