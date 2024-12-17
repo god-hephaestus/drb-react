@@ -55,3 +55,41 @@ body {
   background-color: black;
   color: #c0a162;
 }
+.popup-modal .iti {
+  width: 100% !important;
+}
+
+.popup-modal .iti input {
+  width: 100% !important;
+  box-sizing: border-box;
+  background-color: #333333 !important;
+  color: white !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 8px;
+  padding: 8px 12px;
+  outline: none;
+}
+
+.popup-modal .iti input::placeholder {
+  color: #888888 !important;
+}
+
+.popup-modal .iti input:focus {
+  border-color: #c0a062 !important;
+}
+
+.popup-modal .iti__country-list {
+  background-color: #151515 !important;
+  border: 1px solid #333333;
+  color: white;
+}
+
+.popup-modal .iti__country {
+  color: white;
+}
+
+.popup-modal .iti__country:hover,
+.popup-modal .iti__country.iti__highlight {
+  background-color: #333333 !important;
+  color: #c0a062 !important;
+}

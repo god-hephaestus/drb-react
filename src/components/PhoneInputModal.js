@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import intlTelInput from "intl-tel-input";
 import "intl-tel-input/build/css/intlTelInput.css";
 
 export default function PhoneInputModal() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [iti, setIti] = useState(null);
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const phoneInputRef = React.useRef(null);
+  const [isOpen, setIsOpen] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
+  const phoneInputRef = useRef(null);
+  const modalRef = useRef(null); // Ref for modal content
+  const itiRef = useRef(null); // Persist intlTelInput instance
 
+  // Fetch Country Code for Initial IntlTelInput Setup
   const fetchCountryCode = async () => {
     try {
       const response = await fetch("https://ipapi.co/json/");
@@ -21,76 +23,173 @@ export default function PhoneInputModal() {
     }
   };
 
+  // Initialize IntlTelInput on Component Mount
   useEffect(() => {
+    const initializeIntlTelInput = async () => {
+      const countryCode = await fetchCountryCode();
+      itiRef.current = intlTelInput(phoneInputRef.current, {
+        initialCountry: countryCode,
+        separateDialCode: true,
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
+    };
+
     if (isOpen) {
-      const initializeIntlTelInput = async () => {
-        const countryCode = await fetchCountryCode();
-        const input = phoneInputRef.current;
-
-        const itiInstance = intlTelInput(input, {
-          initialCountry: countryCode,
-          separateDialCode: true,
-          utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        });
-
-        setIti(itiInstance);
-      };
-
       initializeIntlTelInput();
     }
   }, [isOpen]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (iti) {
-      const fullNumber = iti.getNumber();
-      console.log("Full Phone Number:", fullNumber);
-      setPhoneNumber(fullNumber);
+  // Handle Click Outside to Close Modal
+  const handleOutsideClick = (e) => {
+    if (modalRef.current && !modalRef.current.contains(e.target)) {
       setIsOpen(false);
     }
   };
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
+  // Validate Phone Number
+  const validatePhoneNumber = () => {
+    if (!itiRef.current) return false;
+
+    if (!itiRef.current.isValidNumber()) {
+      alert("Please enter a valid phone number.");
+      return false;
+    }
+    return true;
+  };
+
+  // Handle Input Restriction: Only Numbers
+  const handleNumberInput = (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, "");
+  };
+
+  // Form Submission
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validatePhoneNumber()) return;
+
+    const phoneNumber = itiRef.current.getNumber();
+    const formData = new FormData(e.target);
+    const values = Object.fromEntries(formData.entries());
+
+    const formattedValues = {
+      ...values,
+      phone: phoneNumber,
+    };
+
+    setSubmitted(true);
+    try {
+      const response = await fetch(
+        "https://lp.estetikinternational.com/en/thank-you-page-api",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formattedValues).toString(),
+        }
+      );
+
+      if (response.ok) {
+        window.location.href =
+          "https://lp.estetikinternational.com/en/thank-you-page";
+      } else {
+        throw new Error("Network response was not ok");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitted(false);
+    }
+  };
+
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex justify-center items-center bg-gray-900">
       <button
-        className="px-5 py-3 text-white bg-[#c0a062] font-semibold rounded-md hover:bg-[#a89055] transition-all"
+        className="px-6 py-2 text-white bg-[#c0a062] rounded-lg hover:bg-[#a89055] transition-all"
         onClick={() => setIsOpen(true)}
-        title="Book Now"
       >
         Book a Consultation
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
-          <div className="relative bg-white rounded-lg w-11/12 md:w-1/3 p-6 shadow-lg">
+        <div className="fixed z-[180] inset-0 flex justify-center items-center bg-[#151515] bg-opacity-70">
+          <div
+            ref={modalRef}
+            className="popup-modal bg-[#000000] rounded-lg shadow-lg relative"
+            style={{ width: "500px", height: "510px" }}
+          >
+            <div
+              className="w-full h-[60%] bg-center bg-cover"
+              style={{ backgroundImage: "url('/leadPopupB.webp')" }}
+            ></div>
+
             <button
-              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+              className="absolute top-3 right-3 text-white hover:text-gray-300"
               onClick={() => setIsOpen(false)}
             >
               &#10005;
             </button>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex flex-col">
-                <label htmlFor="phone" className="mb-2 text-gray-700">
-                  Phone Number
-                </label>
+            <form onSubmit={handleFormSubmit} className="space-y-4 p-4">
+              <div className="flex px-1">
+                <div className="w-1/2 px-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-white mb-2"
+                  ></label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full px-3 py-2 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#c0a062] bg-[#333333]"
+                    placeholder="Enter your name"
+                  />
+                </div>
+
+                <div className="w-1/2 px-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-white mb-2"
+                  ></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-3 py-2 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#c0a062] bg-[#333333]"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </div>
+
+              <div className="px-3">
+                <label
+                  htmlFor="phone"
+                  className="block text-white mb-2"
+                ></label>
                 <input
                   ref={phoneInputRef}
                   id="phone"
                   type="tel"
-                  className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                  onInput={handleNumberInput}
+                  className="w-full px-3 py-2 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#c0a062] bg-[#333333]"
                   placeholder="Enter your phone number"
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition duration-300"
-              >
-                Submit
-              </button>
+              <div className="text-right px-3">
+                <button
+                  type="submit"
+                  className="py-2 w-full bg-[#c0a062] text-white rounded-lg hover:bg-[#a89055] transition-all"
+                >
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>
