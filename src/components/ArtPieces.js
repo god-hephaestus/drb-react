@@ -44,7 +44,8 @@ export default function ArtPieces() {
                 alt={`Doctor B art piece ${index + 1}`}
                 width={piece.width}
                 height={piece.height}
-                className="object-contain h-full"
+                sizes="(max-width: 1024px) 50vw, 35vw"
+                className="h-auto w-auto object-contain"
               />
             </div>
           ))}
