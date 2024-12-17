@@ -12,6 +12,7 @@ export default function Doctors() {
             src="/doctors/team1Doctor.webp"
             alt="Doctor B Logo"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw, 30vw"
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
@@ -45,6 +46,7 @@ export default function Doctors() {
             src="/doctors/team2Doctor.webp"
             alt="Doctor B Logo"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw, 30vw"
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
@@ -78,6 +80,7 @@ export default function Doctors() {
             src="/doctors/team3Doctor.webp"
             alt="Doctor B Logo"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw, 30vw"
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">

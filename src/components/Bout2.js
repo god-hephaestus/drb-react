@@ -1,8 +1,8 @@
 export default function Bout2() {
   return (
-    <section className="w-full bg-[#111111] text-white lg:px-[10%]">
+    <section className="w-full  bg-[#111111] text-white lg:px-[10%]">
       <div
-        className="container bg-no-repeat bg-center mx-auto about2 pb-10 lg:h-[400px] "
+        className="container bg-no-repeat bg-center mx-auto about2 pb-10 lg: h-[510px] xl:h-[400px] "
         style={{
           backgroundImage: 'url("/about2BgMobile.webp")',
           backgroundSize: "contain",
