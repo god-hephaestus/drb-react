@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -19,14 +19,27 @@ export default function VideoSwiper() {
   ];
 
   const videoLinks = [
-    "https://www.youtube.com/watch?v=NOjjQRVxXzM",
-    "https://www.youtube.com/watch?v=3mP2XhedpdU",
-    "https://www.youtube.com/watch?v=7dO6yDnXmAc",
-    "https://www.youtube.com/watch?v=NBGk_V_QV9U",
-    "https://www.youtube.com/watch?v=9A0yFvIyP08",
-    "https://www.youtube.com/watch?v=QCHgGmYBgCU",
-    "https://www.youtube.com/watch?v=wiT4VLiY3QE",
+    "https://www.youtube.com/embed/NOjjQRVxXzM",
+    "https://www.youtube.com/embed/3mP2XhedpdU",
+    "https://www.youtube.com/embed/7dO6yDnXmAc",
+    "https://www.youtube.com/embed/NBGk_V_QV9U",
+    "https://www.youtube.com/embed/9A0yFvIyP08",
+    "https://www.youtube.com/embed/QCHgGmYBgCU",
+    "https://www.youtube.com/embed/wiT4VLiY3QE",
   ];
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+
+  const openModal = (url) => {
+    setVideoUrl(url);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setVideoUrl("");
+  };
 
   return (
     <section className="py-12">
@@ -57,19 +70,18 @@ export default function VideoSwiper() {
             {imagePaths.map((path, index) => (
               <SwiperSlide
                 key={index}
-                className="relative flex items-center justify-center"
+                className="relative flex items-center justify-center cursor-pointer"
+                onClick={() => openModal(videoLinks[index])}
               >
-                <a
-                  href={videoLinks[index]}
-                  className="w-full h-full rounded-lg flex justify-center overflow-hidden"
-                >
+                <div className="inline-block w-full h-full rounded-lg overflow-hidden">
                   <Image
                     src={path}
                     alt={`Video thumbnail ${index + 1}`}
                     width={400}
                     height={400}
+                    className="w-full"
                   />
-                </a>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -81,6 +93,35 @@ export default function VideoSwiper() {
           </div>
         </div>
       </div>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div
+            className="relative w-full max-w-4xl mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute -top-10 right-0 text-white text-3xl font-bold cursor-pointer"
+            >
+              &times;
+            </button>
+
+            <div className="relative" style={{ paddingTop: "56.25%" }}>
+              <iframe
+                src={`${videoUrl}?autoplay=1`}
+                title="YouTube Video"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full rounded-lg"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
