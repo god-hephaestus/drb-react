@@ -7,6 +7,15 @@ import "intl-tel-input/build/css/intlTelInput.css";
 export default function PopupModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [queryParams, setQueryParams] = useState({
+    utm_source: "",
+    utm_medium: "",
+    utm_campaign: "",
+    utm_content: "",
+    utm_term: "",
+    utm_ad: "",
+    gclid: "",
+  });
   const phoneInputRef = useRef(null);
   const modalRef = useRef(null);
   const itiRef = useRef(null);
@@ -23,8 +32,20 @@ export default function PopupModal() {
     }
   };
 
-  // Initialize IntlTelInput on Component Mount
+  // Initialize IntlTelInput and Query Params on Modal Open
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const newQueryParams = {
+      utm_source: params.get("utm_source") || "",
+      utm_medium: params.get("utm_medium") || "",
+      utm_campaign: params.get("utm_campaign") || "",
+      utm_content: params.get("utm_content") || "",
+      utm_term: params.get("utm_term") || "",
+      utm_ad: params.get("utm_ad") || "",
+      gclid: params.get("gclid") || "",
+    };
+    setQueryParams(newQueryParams);
+
     const initializeIntlTelInput = async () => {
       const countryCode = await fetchCountryCode();
       itiRef.current = intlTelInput(phoneInputRef.current, {
@@ -52,35 +73,39 @@ export default function PopupModal() {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
-  // Validate Phone Number
-  const validatePhoneNumber = () => {
-    if (!itiRef.current) return false;
-
-    if (!itiRef.current.isValidNumber()) {
-      alert("Please enter a valid phone number.");
-      return false;
-    }
-    return true;
-  };
-
-  // Handle Input Restriction: Only Numbers
-  const handleNumberInput = (e) => {
-    e.target.value = e.target.value.replace(/[^0-9]/g, "");
-  };
-
-  // Form Submission
+  // Handle Form Submission
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validatePhoneNumber()) return;
+    if (!itiRef.current) {
+      console.error("IntlTelInput instance is not initialized.");
+      return;
+    }
 
-    const phoneNumber = itiRef.current.getNumber();
+    const rawNumber = phoneInputRef.current.value;
+    const countryCode = itiRef.current.getSelectedCountryData().dialCode;
+
+    const intlNumber = `+${countryCode}${rawNumber}`;
+
+    if (!/^[+]?[0-9]{10,15}$/.test(intlNumber)) {
+      console.error("Invalid phone number format: ", intlNumber);
+      return;
+    }
+
     const formData = new FormData(e.target);
     const values = Object.fromEntries(formData.entries());
 
     const formattedValues = {
       ...values,
-      phone: phoneNumber,
+      type: "Reactlp",
+      phone: intlNumber,
+      g_utm_source: queryParams.utm_source,
+      g_utm_medium: queryParams.utm_medium,
+      g_utm_campaign: queryParams.utm_campaign,
+      g_utm_content: queryParams.utm_content,
+      g_utm_term: queryParams.utm_term,
+      g_utm_ad: queryParams.utm_ad,
+      g_clid: queryParams.gclid,
     };
 
     setSubmitted(true);
@@ -135,12 +160,18 @@ export default function PopupModal() {
             </button>
 
             <form onSubmit={handleFormSubmit} className="space-y-4 p-4">
+              {Object.keys(queryParams).map((key) => (
+                <input
+                  key={key}
+                  type="hidden"
+                  name={key}
+                  value={queryParams[key]}
+                />
+              ))}
+              <input type="hidden" name="type" value="Reactlp" />
+
               <div className="flex px-1">
                 <div className="w-1/2 px-2">
-                  <label
-                    htmlFor="name"
-                    className="block text-white mb-2"
-                  ></label>
                   <input
                     type="text"
                     id="name"
@@ -152,10 +183,6 @@ export default function PopupModal() {
                 </div>
 
                 <div className="w-1/2 px-2">
-                  <label
-                    htmlFor="email"
-                    className="block text-white mb-2"
-                  ></label>
                   <input
                     type="email"
                     id="email"
@@ -168,15 +195,10 @@ export default function PopupModal() {
               </div>
 
               <div className="px-3">
-                <label
-                  htmlFor="phone"
-                  className="block text-white mb-2"
-                ></label>
                 <input
                   ref={phoneInputRef}
                   id="phone"
                   type="tel"
-                  onInput={handleNumberInput}
                   className="w-full px-3 py-2 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#c0a062] bg-[#333333]"
                   placeholder="Enter your phone number"
                 />
