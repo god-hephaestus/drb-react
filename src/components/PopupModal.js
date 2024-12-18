@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import intlTelInput from "intl-tel-input";
 import "intl-tel-input/build/css/intlTelInput.css";
 
-export default function PhoneInputModal() {
+export default function PopupModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const phoneInputRef = useRef(null);

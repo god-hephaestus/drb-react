@@ -1,4 +1,4 @@
-import PhoneInputModal from "./PhoneInputModal";
+import PopupModal from "./PopupModal";
 
 export default function Strip() {
   return (
@@ -15,7 +15,7 @@ export default function Strip() {
             </p>
           </div>
           <div className="w-full lg:w-1/3 flex justify-end">
-            <PhoneInputModal></PhoneInputModal>
+            <PopupModal></PopupModal>
           </div>
         </div>
       </div>
