@@ -134,8 +134,9 @@ export default function OperationForm() {
         style={{ backgroundImage: "url('/formImg.webp')" }}
       ></div>
       <form
+        id="op-form"
         onSubmit={handleFormSubmit}
-        className="w-full lg:w-1/2 max-w-lg bg-transparent p-6 rounded-lg shadow-md"
+        className="w-full op-form lg:w-1/2 max-w-lg bg-transparent p-6 rounded-lg shadow-md"
       >
         <h6 className="text-white text-lg mb-4">Contact Us</h6>
 

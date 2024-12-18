@@ -59,6 +59,16 @@ body {
   width: 100% !important;
 }
 
+.op-form .iti *,
+.op-form .iti input,
+.op-form .iti input::placeholder,
+.op-form .iti .selected-flag,
+.op-form .iti .country-list li,
+.op-form .iti .country-name,
+.op-form .iti .dial-code {
+  color: black !important; /* Apply black text to all relevant elements */
+}
+
 .popup-modal .iti input {
   width: 100% !important;
   box-sizing: border-box;
