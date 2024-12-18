@@ -1,137 +1,134 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
-import {
-  getCountries,
-  getCountryCallingCode,
-  isValidPhoneNumber,
-} from "libphonenumber-js/min";
+import React, { useRef, useState, useEffect } from "react";
+import intlTelInput from "intl-tel-input";
+import "intl-tel-input/build/css/intlTelInput.css";
 
-export default function Form() {
+export default function OperationForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [phone, setPhone] = useState("");
-  const [countryCode, setCountryCode] = useState("US");
-  const [countries, setCountries] = useState([]);
-  const [phoneError, setPhoneError] = useState("");
-  const [queryParams, setQueryParams] = useState({});
-  const [countryFilter, setCountryFilter] = useState("");
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [queryParams, setQueryParams] = useState({
+    utm_source: "",
+    utm_medium: "",
+    utm_campaign: "",
+    utm_content: "",
+    utm_term: "",
+    utm_ad: "",
+    gclid: "",
+  });
+  const phoneInputRef = useRef(null);
+  const itiRef = useRef(null);
 
+  // Fetch Country Code for Initial IntlTelInput Setup
+  const fetchCountryCode = async () => {
+    try {
+      const response = await fetch("https://ipapi.co/json/");
+      const data = await response.json();
+      return data.country_code || "US";
+    } catch (error) {
+      console.error("Failed to fetch country, defaulting to US", error);
+      return "US";
+    }
+  };
+
+  // Initialize IntlTelInput and Query Params on Component Mount
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setQueryParams(Object.fromEntries(params.entries()));
+    const newQueryParams = {
+      utm_source: params.get("utm_source") || "",
+      utm_medium: params.get("utm_medium") || "",
+      utm_campaign: params.get("utm_campaign") || "",
+      utm_content: params.get("utm_content") || "",
+      utm_term: params.get("utm_term") || "",
+      utm_ad: params.get("utm_ad") || "",
+      gclid: params.get("gclid") || "",
+    };
+    setQueryParams(newQueryParams);
 
-    const allCountries = getCountries().map((code) => ({
-      code,
-      name:
-        new Intl.DisplayNames(["en"], { type: "region" }).of(code) || "Unknown",
-      phoneCode: getCountryCallingCode(code),
-    }));
+    const initializeIntlTelInput = async () => {
+      const countryCode = await fetchCountryCode();
+      console.log("Default Country Code: ", countryCode);
 
-    setCountries(allCountries);
+      itiRef.current = intlTelInput(phoneInputRef.current, {
+        initialCountry: countryCode,
+        separateDialCode: true,
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
 
-    const detectUserCountry = async () => {
-      try {
-        const response = await fetch("https://ipapi.co/json/");
-
-        const data = await response.json();
-
-        if (data.country_code) {
-          setCountryCode(data.country_code);
-          setCountryFilter(data.country_code);
-        } else {
-          setCountryCode("US");
-          setCountryFilter("US");
-        }
-      } catch (error) {
-        setCountryCode("US");
-        setCountryFilter("US");
-      }
+      console.log("IntlTelInput Initialized: ", itiRef.current);
     };
 
-    detectUserCountry();
+    initializeIntlTelInput();
   }, []);
 
-  const filteredCountries = useMemo(() => {
-    return countries.filter(
-      (country) =>
-        country.name.toLowerCase().includes(countryFilter.toLowerCase()) ||
-        country.code.toLowerCase().includes(countryFilter.toLowerCase()) ||
-        country.phoneCode.startsWith(countryFilter)
-    );
-  }, [countries, countryFilter]);
-
-  const validatePhoneNumber = () => {
-    const formattedPhone = `+${getCountryCallingCode(countryCode)}${phone}`;
-    if (!isValidPhoneNumber(formattedPhone, countryCode)) {
-      setPhoneError("Please enter a valid phone number!");
-      return false;
-    }
-    setPhoneError("");
-    return true;
-  };
-
-  const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
-    if (phoneError) validatePhoneNumber();
-  };
-
-  const handleCountryFilter = (e) => {
-    const search = e.target.value.toLowerCase();
-    setCountryFilter(search); // Immediately update the filter text
-    setDropdownVisible(true);
-  };
-
-  const handleCountrySelect = (selectedCode) => {
-    setCountryCode(selectedCode);
-    setDropdownVisible(false);
-  };
-
-  const handleBlur = () => {
-    setDropdownVisible(false);
-  };
-
+  // Handle Form Submission
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validatePhoneNumber()) return;
+    if (!itiRef.current) {
+      console.error("IntlTelInput instance is not initialized.");
+      return;
+    }
+
+    const rawNumber = phoneInputRef.current.value;
+    const countryCode = itiRef.current.getSelectedCountryData().dialCode;
+
+    console.log("Raw Phone Input Value: ", rawNumber);
+    console.log("Selected Country Code: ", countryCode);
+
+    const intlNumber = `+${countryCode}${rawNumber}`;
+
+    console.log("Formatted International Number: ", intlNumber);
+
+    // Validate based on intlNumber directly instead of itiRef.current.isValidNumber()
+    if (!/^[+]?\d{10,15}$/.test(intlNumber)) {
+      console.error("Invalid phone number format: ", intlNumber);
+      return;
+    }
 
     const formData = new FormData(e.target);
     const values = Object.fromEntries(formData.entries());
+
     const formattedValues = {
       ...values,
       type: "LND-Drb-React",
-      phone: `+${getCountryCallingCode(countryCode)}${phone}`,
-      ...queryParams,
+      phone: intlNumber,
+      g_utm_source: queryParams.utm_source,
+      g_utm_medium: queryParams.utm_medium,
+      g_utm_campaign: queryParams.utm_campaign,
+      g_utm_content: queryParams.utm_content,
+      g_utm_term: queryParams.utm_term,
+      g_utm_ad: queryParams.utm_ad,
+      g_clid: queryParams.gclid,
     };
 
-    if (!submitted) {
-      setSubmitted(true);
-      try {
-        const response = await fetch(
-          "https://lp.estetikinternational.com/en/thank-you-page-api",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formattedValues).toString(),
-          }
-        );
+    console.log("Formatted Submission Data: ", formattedValues);
 
-        if (response.ok) {
-          window.location.href =
-            "https://lp.estetikinternational.com/en/thank-you-page";
-        } else {
-          throw new Error("Network response was not ok");
+    setSubmitted(true);
+    try {
+      const response = await fetch(
+        "https://lp.estetikinternational.com/en/thank-you-page-api",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formattedValues).toString(),
         }
-      } catch (error) {
-        console.error("Form submission error:", error);
-        setSubmitted(false);
+      );
+
+      if (response.ok) {
+        window.location.href =
+          "https://lp.estetikinternational.com/en/thank-you-page";
+      } else {
+        throw new Error("Network response was not ok");
       }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitted(false);
     }
   };
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center my-9">
       <div
         className="lg:w-1/2 max-w-[549px] h-[424px]"
         style={{ backgroundImage: "url('/formImg.webp')" }}
@@ -139,21 +136,14 @@ export default function Form() {
       <form
         onSubmit={handleFormSubmit}
         className="w-full lg:w-1/2 max-w-lg bg-transparent p-6 rounded-lg shadow-md"
-        aria-labelledby="form-heading"
       >
-        <h2 id="form-heading" className="text-white text-lg mb-4">
-          Contact Us
-        </h2>
+        <h6 className="text-white text-lg mb-4">Contact Us</h6>
 
         {Object.keys(queryParams).map((key) => (
           <input key={key} type="hidden" name={key} value={queryParams[key]} />
         ))}
         <input type="hidden" name="type" value="Reactlp" />
-
-        <div className="mb-4">
-          <label className="block text-white mb-2" htmlFor="name">
-            Your Name
-          </label>
+        <div className="mb-7">
           <input
             type="text"
             id="name"
@@ -164,63 +154,17 @@ export default function Form() {
           />
         </div>
 
-        <div className="mb-4 relative">
-          <label className="block text-white mb-2" htmlFor="phone">
-            Phone Number
-          </label>
-          <div className="flex space-x-2">
-            <div className="relative w-1/2">
-              <input
-                type="text"
-                id="country"
-                value={countryFilter}
-                onChange={handleCountryFilter}
-                placeholder="Search country (name, code, or phone code)"
-                className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
-                aria-haspopup="listbox"
-                onFocus={() => setDropdownVisible(true)}
-                onBlur={handleBlur}
-              />
-              {dropdownVisible && (
-                <ul
-                  className="absolute top-12 left-0 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-auto z-10"
-                  role="listbox"
-                >
-                  {filteredCountries.map((country) => (
-                    <li
-                      key={country.code}
-                      onClick={() => handleCountrySelect(country.code)}
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
-                      role="option"
-                      aria-selected={country.code === countryCode}
-                    >
-                      {country.name} (+{country.phoneCode})
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-            <input
-              type="text"
-              id="phone"
-              value={phone}
-              onChange={handlePhoneChange}
-              maxLength={10}
-              className="w-1/2 px-3 py-2 border rounded-lg placeholder-black text-black"
-              placeholder="Your phone number"
-            />
-          </div>
-          {phoneError && (
-            <p className="text-red-500 text-sm mt-2" role="alert">
-              {phoneError}
-            </p>
-          )}
+        <div className="mb-7">
+          <input
+            ref={phoneInputRef}
+            id="phone"
+            type="tel"
+            className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
+            placeholder="Enter your phone number"
+          />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-white mb-2" htmlFor="email">
-            Email
-          </label>
+        <div className="mb-7">
           <input
             type="email"
             id="email"
@@ -229,16 +173,6 @@ export default function Form() {
             className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
             placeholder="Enter your email"
           />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-white mb-2">Message</label>
-          <textarea
-            name="message"
-            rows="4"
-            className="w-full px-3 py-2 border rounded-lg placeholder-black text-black"
-            placeholder="Write your message"
-          ></textarea>
         </div>
 
         <div className="text-right">
