@@ -15,7 +15,7 @@ export default function GradientButton() {
         onClick={handleScroll}
         className="text-white bg-gradient-animation font-medium rounded-lg text-sm px-10 py-3 shadow-lg monument-heading"
       >
-        Fi
+        Fiyat Teklifi Alın
       </button>
       <style jsx>{`
         @keyframes gradientShift {
