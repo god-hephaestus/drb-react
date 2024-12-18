@@ -1,10 +1,18 @@
 "use client";
 
 export default function GradientButton() {
+  const handleScroll = () => {
+    const targetElement = document.getElementById("op-form");
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <button
         type="button"
+        onClick={handleScroll}
         className="text-white bg-gradient-animation font-medium rounded-lg text-sm px-10 py-3 shadow-lg monument-heading"
       >
         Book a Consultation

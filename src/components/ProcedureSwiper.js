@@ -67,6 +67,14 @@ export default function ProcedureSwiper() {
     },
   ];
 
+  const handleScroll = (event) => {
+    event.preventDefault();
+    const targetElement = document.getElementById("op-form");
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <h5 className="text-4xl font-semibold text-[#c0a062] text-center">
@@ -109,7 +117,8 @@ export default function ProcedureSwiper() {
                     {slide.description}
                   </p>
                   <a
-                    href="#"
+                    href="#op-form"
+                    onClick={handleScroll}
                     className="text-center w-[180px] py-3 rounded-full font-medium text-white bg-gradient-to-r from-[#c0a062de] to-[#c0a062] transition-opacity duration-200 hover:opacity-80"
                   >
                     {slide.buttonText}
