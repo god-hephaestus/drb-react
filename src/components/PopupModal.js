@@ -185,9 +185,14 @@ export default function PopupModal() {
               <div className="text-right px-3">
                 <button
                   type="submit"
-                  className="py-2 w-full bg-[#c0a062] text-white rounded-lg hover:bg-[#a89055] transition-all"
+                  disabled={submitted}
+                  className={`py-2 w-full rounded-lg transition-all ${
+                    submitted
+                      ? "bg-gray-400 text-gray-200"
+                      : "bg-[#c0a062] text-white "
+                  }`}
                 >
-                  Submit
+                  {submitted ? "Submitting..." : "Submit"}
                 </button>
               </div>
             </form>
