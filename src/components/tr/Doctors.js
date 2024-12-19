@@ -4,7 +4,7 @@ export default function Doctors() {
   return (
     <div className="pb-12">
       <h3 className="text-4xl text-[#c0a062] font-semibold text-center mt-9">
-      Doktor B Ekibiyle Tanışın
+        Doktor B Ekibiyle Tanışın
       </h3>
       <div className="container mx-auto mt-9 mb-24 gap-8 shadow-lg flex flex-col lg:flex-row justify-center items-center">
         <div className="mb-32 lg:mb-0 relative w-full lg:w-1/3 flex flex-col bg-gradient-to-b from-transparent to-[#c0a062] max-w-[400px] h-[400px] rounded-[30px] justify-center items-center">
@@ -16,9 +16,11 @@ export default function Doctors() {
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">Op. Dr. Bülent Cihantimur</h5>
-            <p className="text-md py-2 ">
-            Estetik, Plastik ve Rekonstrüktif Cerrah
+            <h5 className="text-xl font-semibold text-white">
+              Op. Dr. Bülent Cihantimur
+            </h5>
+            <p className="text-md py-2  text-white">
+              Estetik, Plastik ve Rekonstrüktif Cerrah
             </p>
             <div className="flex justify-around">
               <div className="flex flex-col justify-center items-center">
@@ -26,7 +28,7 @@ export default function Doctors() {
                   <span className="font-bold">30+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                Yılların <br /> deneyimi
+                  Yılların <br /> deneyimi
                 </span>
               </div>
 
@@ -35,7 +37,7 @@ export default function Doctors() {
                   <span className="font-bold">20000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                Gerçekleştirilen <br /> Prosedürler
+                  Gerçekleştirilen <br /> Prosedürler
                 </span>
               </div>
             </div>
@@ -50,9 +52,11 @@ export default function Doctors() {
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">Prof. Dr. Cenk Şen</h5>
-            <p className="text-md py-2 ">
-            Estetik, Plastik ve Rekonstrüktif Cerrah
+            <h5 className="text-xl font-semibold text-white">
+              Prof. Dr. Cenk Şen
+            </h5>
+            <p className="text-md py-2  text-white">
+              Estetik, Plastik ve Rekonstrüktif Cerrah
             </p>
             <div className="flex justify-around">
               <div className="flex flex-col justify-center items-center">
@@ -60,7 +64,7 @@ export default function Doctors() {
                   <span className="font-bold">30+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                Yılların <br /> deneyimi
+                  Yılların <br /> deneyimi
                 </span>
               </div>
 
@@ -69,7 +73,7 @@ export default function Doctors() {
                   <span className="font-bold">10000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                Gerçekleştirilen <br /> Prosedürler
+                  Gerçekleştirilen <br /> Prosedürler
                 </span>
               </div>
             </div>
@@ -84,11 +88,11 @@ export default function Doctors() {
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">
+            <h5 className="text-xl font-semibold text-white">
               Op. Dr. Fevzi Kunter Erten
             </h5>
-            <p className="text-md py-2 ">
-            Estetik, Plastik ve Rekonstrüktif Cerrah
+            <p className="text-md py-2  text-white">
+              Estetik, Plastik ve Rekonstrüktif Cerrah
             </p>
             <div className="flex justify-around">
               <div className="flex flex-col justify-center items-center">
@@ -96,7 +100,7 @@ export default function Doctors() {
                   <span className="font-bold">5+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                Yılların <br /> deneyimi
+                  Yılların <br /> deneyimi
                 </span>
               </div>
 
@@ -105,7 +109,7 @@ export default function Doctors() {
                   <span className="font-bold">6000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                Gerçekleştirilen <br /> Prosedürler
+                  Gerçekleştirilen <br /> Prosedürler
                 </span>
               </div>
             </div>

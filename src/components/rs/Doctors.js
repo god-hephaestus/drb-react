@@ -4,7 +4,7 @@ export default function Doctors() {
   return (
     <div className="pb-12">
       <h3 className="text-4xl text-[#c0a062] font-semibold text-center mt-9">
-      Tim Doktor B-ja
+        Tim Doktor B-ja
       </h3>
       <div className="container mx-auto mt-9 mb-24 gap-8 shadow-lg flex flex-col lg:flex-row justify-center items-center">
         <div className="mb-32 lg:mb-0 relative w-full lg:w-1/3 flex flex-col bg-gradient-to-b from-transparent to-[#c0a062] max-w-[400px] h-[400px] rounded-[30px] justify-center items-center">
@@ -16,8 +16,10 @@ export default function Doctors() {
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">Op. Dr. Bülent Cihantimur</h5>
-            <p className="text-md py-2 ">
+            <h5 className="text-xl font-semibold text-white">
+              Op. Dr. Bülent Cihantimur
+            </h5>
+            <p className="text-md py-2  text-white">
               Estetski, plastični i rekonstruktivni hirurg
             </p>
             <div className="flex justify-around">
@@ -26,7 +28,7 @@ export default function Doctors() {
                   <span className="font-bold">30+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                Godine <br /> iskustva
+                  Godine <br /> iskustva
                 </span>
               </div>
 
@@ -35,7 +37,7 @@ export default function Doctors() {
                   <span className="font-bold">20000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                Obavljene <br /> procedure
+                  Obavljene <br /> procedure
                 </span>
               </div>
             </div>
@@ -50,8 +52,10 @@ export default function Doctors() {
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">Prof. Dr. Cenk Şen</h5>
-            <p className="text-md py-2 ">
+            <h5 className="text-xl font-semibold text-white">
+              Prof. Dr. Cenk Şen
+            </h5>
+            <p className="text-md py-2  text-white">
               Estetski, plastični i rekonstruktivni hirurg
             </p>
             <div className="flex justify-around">
@@ -84,10 +88,10 @@ export default function Doctors() {
             className="pt-[3%] object-contain"
           />
           <div className="absolute -bottom-12 text-center border-4 border-transparent bg-[#151515] w-[80%] h-[30%] rounded-[30px]">
-            <h5 className="text-xl font-semibold">
+            <h5 className="text-xl font-semibold text-white">
               Op. Dr. Fevzi Kunter Erten
             </h5>
-            <p className="text-md py-2 ">
+            <p className="text-md py-2  text-white">
               Estetski, plastični i rekonstruktivni hirurg
             </p>
             <div className="flex justify-around">

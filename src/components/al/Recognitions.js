@@ -4,9 +4,7 @@ export default function Recognitions() {
   return (
     <div className="w-full my-9">
       <div className="container mx-auto lg:px-[10%]">
-        <h6 className="text-[#c0a062] text-center text-4xl mb-9">
-        Çmime
-        </h6>
+        <h6 className="text-[#c0a062] text-center text-4xl mb-9">Çmime</h6>
         <div className="flex justify-center items-center flex-wrap">
           <div className="lg:w-1/4 w-1/2 flex flex-col justify-center items-center py-4">
             <Image
@@ -15,8 +13,8 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold p-2 text-center">
-            Oskarë të Suksesit
+            <p className="text-lg font-semibold p-2 text-center text-white">
+              Oskarë të Suksesit
             </p>
           </div>
           <div className="lg:w-1/4 w-1/2 flex flex-col justify-center items-center py-4">
@@ -26,8 +24,8 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold p-2 text-center">
-            Çmimi i Përsosmërisë
+            <p className="text-lg font-semibold p-2 text-center text-white">
+              Çmimi i Përsosmërisë
             </p>
           </div>
           <div className="lg:w-1/4 w-1/2 flex flex-col justify-center items-center py-4">
@@ -37,8 +35,8 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold p-2 text-center">
-            Mjeku i Vitit
+            <p className="text-lg font-semibold p-2 text-center text-white">
+              Mjeku i Vitit
             </p>
           </div>
           <div className="lg:w-1/4 w-1/2 flex flex-col justify-center items-center py-4">
@@ -48,8 +46,8 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold p-2 text-center">
-            Çmimi për Kontribut të Shkëlqyer
+            <p className="text-lg font-semibold p-2 text-center text-white">
+              Çmimi për Kontribut të Shkëlqyer
             </p>
           </div>
         </div>
