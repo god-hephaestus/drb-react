@@ -16,7 +16,7 @@ export default function Recognitions() {
               height={64}
             />
             <p className="text-lg font-semibold p-2 text-center">
-            Başarı Oscar'ları
+            Başarı Oscar&apos;ları
             </p>
           </div>
           <div className="lg:w-1/4 w-1/2 flex flex-col justify-center items-center py-4">

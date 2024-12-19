@@ -24,7 +24,7 @@ export default function Bout2() {
           <div className="w-full lg:w-1/2">
             <div className="pt-[5%] lg:pr-[10%]">
               <h2 className="text-4xl p-2 text-[#c0a062] font-bold mb-5 lg:text-left text-center ">
-                Estetik Cerrahi'nin Öncüsü ile Tanışın
+                Estetik Cerrahi&apos;nin Öncüsü ile Tanışın
               </h2>
               <p className="p-2 lg:text-left text-center">
               Bilinen kimi tıp ilkeleri vardır, bunlardan en bilineni ise zarar vermeme üzerine olandır. 

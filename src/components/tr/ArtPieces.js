@@ -30,7 +30,7 @@ export default function ArtPieces() {
       <div>
         <div className="text-center mb-[60px]">
           <h3 className="text-[40px] leading-[44px] text-[#c0a062]">
-            Doctor B'nin Sanat Eserleri
+            Doctor B&apos;nin Sanat Eserleri
           </h3>
         </div>
         <div className="flex flex-wrap justify-around lg:justify-center mt-[60px] container mx-auto">

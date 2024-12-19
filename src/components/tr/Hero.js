@@ -1,5 +1,5 @@
 import Image from "next/image";
-import GradientButton from "../../components/GradientButton";
+import GradientButton from "../../components/tr/GradientButton";
 
 export default function Hero() {
   return (

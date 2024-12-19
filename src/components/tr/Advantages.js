@@ -5,7 +5,7 @@ export default function Advantages() {
     <div className="w-full my-9">
       <div className="container mx-auto lg:px-[10%]">
         <h3 className="text-[#c0a062] text-center text-4xl mb-9">
-        Neden Doctor B'yi Seçmelisin?
+        Neden Doctor B&apos;yi Seçmelisin?
         </h3>
         <div className="flex justify-center items-center flex-wrap">
           {advantages.map((advantage, index) => (

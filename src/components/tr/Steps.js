@@ -26,9 +26,9 @@ export default function Steps() {
           height={50}
           width={90}
         />
-        <h3 className="text-[#c0a062] text-lg">TLC "Bu Ben Miyim" TV Programı'nda Doctor B</h3>
+        <h3 className="text-[#c0a062] text-lg">TLC &quot;Bu Ben Miyim&quot; TV Programı&apos;nda Doctor B</h3>
         <p className="pb-5 font-semibold">
-        TLC'nin "Bu Ben miyim?" programının her bölümünde Doctor B, görünüşlerinden memnun olmayan üç hastanın endişelerini ele alıyor.
+        TLC&apos;nin &quot;Bu Ben miyim?&quot; programının her bölümünde Doctor B, görünüşlerinden memnun olmayan üç hastanın endişelerini ele alıyor.
         </p>
       </div>
       <div className="w-full lg:w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px]">

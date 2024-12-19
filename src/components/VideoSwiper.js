@@ -45,7 +45,7 @@ export default function VideoSwiper() {
     <section className="py-12">
       <div className="container mx-auto px-10">
         <h3 className="text-center text-4xl font-semibold mb-8 text-[#c0a062]">
-          Testimonials
+         Testimonials
         </h3>
         <div className="relative">
           <Swiper
