@@ -15,7 +15,7 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold p-2 text-center">
+            <p className="text-lg font-semibold p-2 text-center text-white">
               Success Oscars
             </p>
           </div>
@@ -26,7 +26,7 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold p-2 text-center">
+            <p className="text-lg font-semibold p-2 text-center text-white">
               Excellence Award
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold p-2 text-center">
+            <p className="text-lg font-semibold p-2 text-center text-white">
               Physician Of The Year
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function Recognitions() {
               width={64}
               height={64}
             />
-            <p className="text-lg font-semibold p-2 text-center">
+            <p className="text-lg font-semibold p-2 text-center text-white">
               Outstanding Contribution Award
             </p>
           </div>

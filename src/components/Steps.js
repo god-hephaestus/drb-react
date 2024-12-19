@@ -14,7 +14,7 @@ export default function Steps() {
         <h3 className="text-[#c0a062] text-lg leading-8">
           99% Recommendation Rate
         </h3>
-        <p className="pb-5 font-semibold">
+        <p className="pb-5 font-semibold text-white">
           Estetik International has 99% Recommendation Rate from +5,000
           Patients.
         </p>
@@ -28,7 +28,7 @@ export default function Steps() {
           width={90}
         />
         <h3 className="text-[#c0a062] text-lg">“Is This Me?” on TLC</h3>
-        <p className="pb-5 font-semibold">
+        <p className="pb-5 font-semibold text-white">
           In each episode of TLC’s “Is This Me?” show, Doctor B addresses the
           concerns of three patients who are not happy with their appearance.
         </p>
@@ -42,7 +42,7 @@ export default function Steps() {
           className="pt-5"
         />
         <h3 className="text-[#c0a062] text-lg">Fashion TV</h3>
-        <p className="pb-5 font-semibold">
+        <p className="pb-5 font-semibold text-white">
           Doctor B displays how small touches can bring great positives in one’s
           physical appearance and self-confidence.
         </p>
