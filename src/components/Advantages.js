@@ -21,7 +21,7 @@ export default function Advantages() {
                   className="object-contain"
                 />
               </div>
-              <p className="text-lg font-semibold p-2 text-center">
+              <p className="text-lg font-semibold p-2 text-center text-white">
                 {advantage.text}
               </p>
             </div>
