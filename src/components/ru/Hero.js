@@ -1,5 +1,6 @@
 import Image from "next/image";
 import GradientButton from "../../components/ru/GradientButton";
+import LanguageDropdown from "../../components/ru/LanguageDropdown";
 
 export default function Hero() {
   return (
@@ -15,7 +16,7 @@ export default function Hero() {
         />
 
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
-
+        <LanguageDropdown />
         <div className="relative mt-[35%] lg:mt-[10%] z-10 flex flex-col items-center text-center text-white gap-4 lg:gap-6">
           <p className="text-2xl font-light monument-font monument-heading">
           Обнаружить <br />
