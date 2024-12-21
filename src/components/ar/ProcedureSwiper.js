@@ -78,7 +78,7 @@ export default function ProcedureSwiper() {
   return (
     <>
       <h5 className="text-4xl font-semibold text-[#c0a062] text-center">
-      الإجراءات
+        الإجراءات
       </h5>
       <section className="relative mx-auto bg-[#151515]  shadow-lg rounded-2xl max-w-[1280px] p-4 my-9">
         <Swiper
@@ -109,8 +109,8 @@ export default function ProcedureSwiper() {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left lg:mb-9 px-5 lg:pl-0 lg:pr-[5%]">
-                  <h3 className="text-3xl font-bold mb-4 text-[#c0a062] lg:h-[64px]">
+                <div className="flex flex-col w-full lg:w-2/3 text-center items-center lg:items-start lg:text-left lg:mb-9 px-3 lg:pl-0 lg:pr-[5%]">
+                  <h3 className="text-3xl font-bold m-4 text-[#c0a062] lg:h-[64px]">
                     {slide.title}
                   </h3>
                   <p className="text-md mb-6 leading-relaxed lg:h-[140px] text-[#ffffff]">
