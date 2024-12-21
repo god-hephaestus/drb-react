@@ -10,20 +10,22 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: "Doctor B | Bülent Cihantimur MD",
-  description: "الدكتور ب، طبيب المشاهير، رقم واحد في تركيا، صاحب مستشفى خاص به في قلب اسطنبول",
+  description:
+    "الدكتور ب، طبيب المشاهير، رقم واحد في تركيا، صاحب مستشفى خاص به في قلب اسطنبول",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, lang = "ar" }) {
   return (
-    <html lang="ar" dir="rtl">
-      <body className={`${montserrat.variable} antialiased`}>{children}
+    <html lang={lang} dir="rtl">
+      <body className={`${montserrat.variable} antialiased`}>
+        {children}
 
-      <Script
-        src="https://cdn.cookie-script.com/s/0cb95ba29af25e4bb81af76838a4fe56.js"
-        strategy="lazyOnload"
-        type="text/javascript"
-        charset="UTF-8"
-      />
+        <Script
+          src="https://cdn.cookie-script.com/s/0cb95ba29af25e4bb81af76838a4fe56.js"
+          strategy="lazyOnload"
+          type="text/javascript"
+          charset="UTF-8"
+        />
       </body>
     </html>
   );

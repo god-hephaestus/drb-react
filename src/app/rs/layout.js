@@ -13,18 +13,18 @@ export const metadata = {
   description: "Otkrijte stručnost i umeće Doktor B-ja",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, lang = "rs" }) {
   return (
-    <html lang="rs">
-      <body className={`${montserrat.variable} antialiased`}>{children}
+    <html lang={lang}>
+      <body className={`${montserrat.variable} antialiased`}>
+        {children}
 
-      <Script
-        src="https://cdn.cookie-script.com/s/0cb95ba29af25e4bb81af76838a4fe56.js"
-        strategy="lazyOnload"
-        type="text/javascript"
-        charset="UTF-8"
-      />
-
+        <Script
+          src="https://cdn.cookie-script.com/s/0cb95ba29af25e4bb81af76838a4fe56.js"
+          strategy="lazyOnload"
+          type="text/javascript"
+          charset="UTF-8"
+        />
       </body>
     </html>
   );
