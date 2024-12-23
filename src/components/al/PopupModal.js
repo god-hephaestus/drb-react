@@ -20,6 +20,45 @@ export default function PopupModal() {
   const modalRef = useRef(null);
   const itiRef = useRef(null);
 
+  const timerReached = useRef(false);
+  const scrolledEnough = useRef(false);
+
+  const checkConditions = () => {
+    if (timerReached.current && scrolledEnough.current) {
+      setIsOpen(true);
+    }
+  };
+
+  // Timer Logic
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      timerReached.current = true;
+      checkConditions();
+    }, 30000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+      if (scrollPercent > 50 && !scrolledEnough.current) {
+        scrolledEnough.current = true;
+        checkConditions();
+      }
+    }, 250);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Fetch Country Code for Initial IntlTelInput Setup
   const fetchCountryCode = async () => {
     try {
@@ -223,4 +262,13 @@ export default function PopupModal() {
       )}
     </div>
   );
+}
+
+// Debounce Helper
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
 }
