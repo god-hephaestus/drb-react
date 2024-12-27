@@ -5,7 +5,7 @@ export default function Advantages() {
     <div className="w-full my-9">
       <div className="container mx-auto lg:px-[10%]">
         <h3 className="text-[#c0a062] text-center text-4xl mb-9">
-        Почему выбрать Доктора Б
+          Почему выбрать Доктора Б
         </h3>
         <div className="flex justify-center items-center flex-wrap">
           {advantages.map((advantage, index) => (
@@ -21,7 +21,7 @@ export default function Advantages() {
                   className="object-contain"
                 />
               </div>
-              <p className="text-lg font-semibold p-2 text-center">
+              <p className="text-lg text-white font-semibold p-2 text-center">
                 {advantage.text}
               </p>
             </div>

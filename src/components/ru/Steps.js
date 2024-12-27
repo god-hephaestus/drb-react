@@ -15,8 +15,8 @@ export default function Steps() {
           99% успешных результатов
         </h3>
         <p className="pb-5 font-semibold text-white">
-          Estetik International имеет 99% успешных результатов более чем от 5000
-          пациентов.
+          Доктор Бюлент Джихантимур имеет 99% успешных результатов более чем от
+          10000 пациентов.
         </p>
       </div>
       <div className="w-full lg:w-1/3 flex flex-col gap-4 justify-center items-center text-center px-[30px] ">

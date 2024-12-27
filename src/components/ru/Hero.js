@@ -19,14 +19,12 @@ export default function Hero() {
         <LanguageDropdown />
         <div className="relative mt-[35%] lg:mt-[10%] z-10 flex flex-col items-center text-center text-white gap-4 lg:gap-6">
           <p className="text-2xl font-light monument-font monument-heading">
-          Обнаружить <br />
-            <span className="text-[#c0a062]">
-            Экспертиза и артистизм
-            </span>
+            Откройте для себя <br />
+            <span className="text-[#c0a062]">мастерство и искусство </span>
           </p>
 
           <h1 className="text-6xl md:text-7xl tracking-wide drop-shadow-lg monument-heading">
-          Доктор Б
+            Доктора Б
           </h1>
 
           <Image

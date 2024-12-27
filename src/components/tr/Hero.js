@@ -19,14 +19,13 @@ export default function Hero() {
         <LanguageDropdown />
         <div className="relative mt-[35%] lg:mt-[10%] z-10 flex flex-col items-center text-center text-white gap-4 lg:gap-6">
           <p className="text-2xl font-light monument-font monument-heading">
-            <span className="text-[#c0a062]">
-            Sanatçılığı ve Uzmanlığı 
-            </span><br />
-            Discover
+            <span className="text-[#c0a062]">Güzellik ve İnovasyonun</span>
+            <br />
+            Simgesi
           </p>
 
           <h1 className="text-6xl md:text-7xl tracking-wide drop-shadow-lg monument-heading">
-            Doktor B ile
+            Doktor B
           </h1>
 
           <Image

@@ -27,8 +27,7 @@ export default function ProcedureSwiper() {
     {
       id: 3,
       image: "/procedures/7.webp",
-      title:
-        "Zmadhimi i Gjoksit, Lifting i Gjoksit(Mastopeksi) dhe Reduktimi i Gjoksit",
+      title: "Mamoplasti",
       description:
         "Procedura të personalizuara për të përmirësuar madhësinë, formën dhe pozicionin e gjoksit tuaj. Nëse dëshironi të rrisni volumin me implante ose transferim të yndyrës, të riktheni ngurtësinë pas shtatëzanisë ose kalimit të moshës, apo të zvogëloni shqetësimin nga gjoksi i madh, këto kirurgji janë posaçërisht për të përmirësuar proporcionet, komoditetin dhe vetëbesimin, duke ofruar rezultate natyrale.",
       buttonText: "Rezervoni Konsultën Tuaj",

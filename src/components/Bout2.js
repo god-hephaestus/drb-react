@@ -27,16 +27,17 @@ export default function Bout2() {
                 Meet The Pioneer in Aesthetic Surgery
               </h2>
               <p className="p-2 lg:text-left text-center">
-                There is a principle in medicine: Non-maleficence is probably
-                the best known of the principles. In short, it means, “to do no
-                harm.” If you can treat with simple methods, try those methods
-                first. In order for a patient to make a fully informed decision,
-                she/he must understand all risks and benefits of the procedure
-                and the likelihood of success. First of all, Dr B. suggests
-                non-surgical treatments to everyone. Therefore, he tries to
-                achieve the patient’s desired results with simple methods, and
-                if he cannot achieve the desired results with simple methods, he
-                then begin considering surgery.
+                Probably one of the best known principles in medicine is
+                “Non-maleficence”, which simply means "do no harm." The idea is
+                to always seek the most gentle approach first. In order for a
+                patient to make a fully informed decision, they must understand
+                all risks and benefits of the procedure and the likelihood of
+                success. Dr. B. always recommends non-surgical treatments as the
+                first option for patients. His goal is to help you achieve the
+                results you desire using the simplest, least invasive methods.
+                If those methods don't achieve the desired results, only then
+                will surgery be considered. This ensures you're always treated
+                with care, minimizing risks while maximizing your beauty.
               </p>
             </div>
           </div>

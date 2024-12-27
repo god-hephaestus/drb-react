@@ -27,7 +27,7 @@ export default function ProcedureSwiper() {
     {
       id: 3,
       image: "/procedures/7.webp",
-      title: "Meme Büyütme, Meme Dikleştirme (Mastopeksi) ve Meme Küçültme",
+      title: "Mamoplasti",
       description:
         "Meme büyüklüğünü, şeklini ve pozisyonunu artırmak için kişiye özel prosedürler sunulur. İmplantlar veya yağ transferi ile hacim artırmak, yaşlanma veya hamilelik sonrası sıkılığı geri kazandırmak veya aşırı büyük göğüslerden kaynaklanan rahatsızlıkları azaltmak amacıyla yapılan bu cerrahiler, doğal görünümlü sonuçlarla vücut oranını, konforu ve özgüveni artırmak için tasarlanmıştır.",
       buttonText: "Fiyat Teklifi Alın!",
@@ -78,7 +78,7 @@ export default function ProcedureSwiper() {
   return (
     <>
       <h5 className="text-4xl font-semibold text-[#c0a062] text-center">
-        Procedures
+        Prosedürler
       </h5>
       <section className="relative mx-auto bg-[#151515]  shadow-lg rounded-2xl max-w-[1280px] p-4 my-9">
         <Swiper

@@ -27,8 +27,7 @@ export default function ProcedureSwiper() {
     {
       id: 3,
       image: "/procedures/7.webp",
-      title:
-        "Povećanje Grudi, Podizanje Grudi (Mastopeksija) i Smanjenje Grudi",
+      title: "Mamoplastika",
       description:
         "Personalizovane procedure za poboljšanje veličine, oblika i položaja vaših grudi. Bilo da želite da povećate volumen pomoću implantata ili transfera masti, obnovite čvrstinu nakon starenja ili trudnoće, ili smanjite nelagodnost zbog prevelikih grudi, ove hirurške intervencije dizajnirane su da poboljšaju proporcije, udobnost i samopouzdanje sa prirodnim rezultatima.",
       buttonText: "Zatražite ponudu",

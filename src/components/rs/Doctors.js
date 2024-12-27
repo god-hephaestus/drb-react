@@ -64,7 +64,7 @@ export default function Doctors() {
                   <span className="font-bold">30+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                  Years of <br /> experience
+                  Godine <br /> iskustva
                 </span>
               </div>
 
@@ -73,7 +73,7 @@ export default function Doctors() {
                   <span className="font-bold">10000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                  Performed <br /> Procedures
+                  Obavljene <br /> procedure
                 </span>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function Doctors() {
                   <span className="font-bold">5+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                  Years of <br /> Experience
+                  Godine <br /> iskustva
                 </span>
               </div>
 
@@ -109,7 +109,7 @@ export default function Doctors() {
                   <span className="font-bold">6000+</span>
                 </div>
                 <span className="text-[#c0a062] font-bold">
-                  Performed <br /> Procedures
+                  Obavljene <br /> procedure
                 </span>
               </div>
             </div>
