@@ -28,16 +28,17 @@ export default function Bout2() {
               </h2>
               <p className="p-2 lg:text-left text-center">
                 Probably one of the best known principles in medicine is
-                “Non-maleficence”, which simply means "do no harm." The idea is
-                to always seek the most gentle approach first. In order for a
-                patient to make a fully informed decision, they must understand
-                all risks and benefits of the procedure and the likelihood of
-                success. Dr. B. always recommends non-surgical treatments as the
-                first option for patients. His goal is to help you achieve the
-                results you desire using the simplest, least invasive methods.
-                If those methods don't achieve the desired results, only then
-                will surgery be considered. This ensures you're always treated
-                with care, minimizing risks while maximizing your beauty.
+                &quot;Non-maleficence&quot;, which simply means &quot;do no
+                harm.&quot; The idea is to always seek the most gentle approach
+                first. In order for a patient to make a fully informed decision,
+                they must understand all risks and benefits of the procedure and
+                the likelihood of success. Dr. B. always recommends non-surgical
+                treatments as the first option for patients. His goal is to help
+                you achieve the results you desire using the simplest, least
+                invasive methods. If those methods don&apos;t achieve the
+                desired results, only then will surgery be considered. This
+                ensures you&apos;re always treated with care, minimizing risks
+                while maximizing your beauty.
               </p>
             </div>
           </div>

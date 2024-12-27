@@ -14,9 +14,9 @@ export const metadata = {
     "الدكتور ب، طبيب المشاهير، رقم واحد في تركيا، صاحب مستشفى خاص به في قلب اسطنبول",
 };
 
-export default function RootLayout({ children, lang = "ar" }) {
+export default function RootLayout({ children }) {
   return (
-    <html lang={lang} dir="rtl">
+    <html lang="ar" dir="rtl">
       <body className={`${montserrat.variable} antialiased`}>
         {children}
 

@@ -14,9 +14,9 @@ export const metadata = {
     "Türkiye'nin bir numaralı doktoru Doctor B'nin İstanbul'un merkezindeki muayenesini ziyaret edin",
 };
 
-export default function RootLayout({ children, lang = "ru" }) {
+export default function RootLayout({ children }) {
   return (
-    <html lang={lang}>
+    <html lang="tr">
       <body className={`${montserrat.variable} antialiased`}>
         {children}
 

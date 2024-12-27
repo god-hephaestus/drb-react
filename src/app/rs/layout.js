@@ -13,9 +13,9 @@ export const metadata = {
   description: "Otkrijte stručnost i umeće Doktor B-ja",
 };
 
-export default function RootLayout({ children, lang = "rs" }) {
+export default function RootLayout({ children }) {
   return (
-    <html lang={lang}>
+    <html lang="rs">
       <body className={`${montserrat.variable} antialiased`}>
         {children}
 
